@@ -1,0 +1,17 @@
+/*.mySearch{
+
+	padding-right: 650px !important;
+}*/
+
+.align{
+
+	align-items: center !important;
+	text-align: center !important;
+}
+
+.fixheader{
+
+	/*background-color: #3d5199 !important;*/
+	padding-bottom: calc(12em + 100px);
+	padding-top: 12em;
+}
