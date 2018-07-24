@@ -15,3 +15,19 @@
 	padding-bottom: calc(12em + 100px);
 	padding-top: 12em;
 }
+
+.fix{
+
+	-webkit-background-size: cover !important;
+    -moz-background-size: cover !important;
+    background-size: cover !important;
+    -o-background-size: cover !important;
+    height:100% !important;
+    width: 100% !important;
+}
+
+.col-com-margen{
+
+	padding-right: 10px;
+	padding-left: 10px;
+}
