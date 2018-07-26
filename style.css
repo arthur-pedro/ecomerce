@@ -174,13 +174,13 @@ input:-webkit-autofill:focus {
 .sky-bg {
     background: #75cbe7;
     background: -webkit-gradient(linear, left top, left bottom, from(#75cbe7), to(#138fc2));
-    background: linear-gradient(to bottom, #75cbe7 0%, #138fc2 100%);
+    background: linear-gradient(to bottom, #02a766 0%, #01333e 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#75cbe7', endColorstr='#138fc2', GradientType=0);
     color: #ffffff;
 }
 
 .gray-bg {
-    background-color: #f2fefe;
+    background-color: #fff;
 }
 
 /**
@@ -357,7 +357,7 @@ input:-webkit-autofill:focus {
 }
 
 .mainmenu-area.affix {
-    background-color: #138fc2;
+    background-color: #039f62;;
 }
 
 
@@ -869,7 +869,7 @@ preloader
     height: 100%;
     background: #75cbe7;
     background: -webkit-gradient(linear, left top, left bottom, from(#75cbe7), to(#138fc2));
-    background: linear-gradient(to bottom, #75cbe7 0%, #138fc2 100%);
+    background: linear-gradient(to bottom, #02a766 0%, #01333e 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#75cbe7', endColorstr='#138fc2', GradientType=0);
     z-index: 99999999999;
 }
