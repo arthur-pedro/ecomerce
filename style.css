@@ -347,7 +347,7 @@ preloader
 }
 
 .mainmenu-area.affix {
-    background-color: #039f62;;
+    background-color: #015549;;
 }
 
 .section-padding {
@@ -356,4 +356,104 @@ preloader
 
 .gray-bg {
     background-color: #fff;
+}
+
+
+.header-color{
+
+    background: linear-gradient(to bottom, #02a766 0%, #01333e 100%);
+    /*padding-bottom: 200px;*/
+
+}
+
+.footer-color{
+
+    background: linear-gradient(to bottom, #01333e 0%, #015549 100%);
+    padding-top: 70px;
+}
+
+.header-text h2 {
+    margin-bottom: 20px;
+    font-size: 40px;
+}
+
+.header-text .button {
+    margin-top: 30px;
+}
+
+.color-fix{
+
+    color: #fff;
+}
+
+.footer-margin-fix{
+
+    background-color: #fff; 
+    padding-bottom: 1px; 
+    margin-top: 70px;
+    margin-bottom: 30px;
+}
+
+/**
+*Accordion
+**/
+
+#accordion .panel {
+    background: none;
+}
+
+#accordion .panel .panel-title {
+    padding: 30px 0 30px 60px;
+    position: relative;
+}
+
+#accordion .panel .panel-collapse {
+    padding-left: 60px;
+}
+
+#accordion .panel .panel-title a span:after,
+#accordion .panel .panel-title a span:before,
+#accordion .panel .panel-title a span {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 20px;
+    width: 36px;
+    height: 36px;
+    background: #015549;
+    border-radius: 50%;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+}
+
+
+#accordion .panel .panel-title a span:before,
+#accordion .panel .panel-title a span:after {
+    width: 10px;
+    height: 1px;
+    background-color: #ffffff;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%);
+    transform: translate(-50%)
+}
+
+#accordion .panel .panel-title a span:before {
+    -webkit-transform: translate(-50%) rotate(90deg);
+    transform: translate(-50%) rotate(90deg)
+}
+
+#accordion .panel .panel-title a[aria-expanded="true"] span:before {
+    -webkit-transform: translate(-50%) rotate(0deg);
+    transform: translate(-50%) rotate(0deg)
+}
+
+.teste{
+
+    align-items: center;
+}
+
+.container-fix{
+
+    width: 800px;
 }
