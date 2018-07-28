@@ -361,20 +361,20 @@ preloader
 
 .header-color{
 
-    background: linear-gradient(to bottom, #02a766 0%, #01333e 100%);
+    background: linear-gradient(to bottom, #1abd7c 0%, #01333e 100%);
     /*padding-bottom: 200px;*/
 
 }
 
 .footer-color{
 
-    background: linear-gradient(to bottom, #01333e 0%, #015549 100%);
+    background: linear-gradient(to bottom, #01333e 0%, #1abd7c 100%);
     padding-top: 70px;
 }
 
 .header-text h2 {
-    margin-bottom: 20px;
-    font-size: 40px;
+    margin-bottom: 0px;
+    font-size: 80px;
 }
 
 .header-text .button {
@@ -456,4 +456,41 @@ preloader
 .container-fix{
 
     width: 800px;
+}
+
+/**
+*Default Button
+**/
+
+.button {
+    display: inline-block;
+    padding: 8px 30px;
+    border-radius: 50px;
+    color: #ffffff;
+    background-color: #119661;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    border: none;
+    -webkit-box-shadow: 2px 5px 20px -5px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 5px 20px -5px rgba(0, 0, 0, 0.1);
+}
+
+.button.white,
+.button:hover {
+    background-color: #119661b3;
+    color: #ffffff;
+}
+
+.button.white:hover {
+    background-color: #119661b3;
+    color: #ffffff;
+}
+
+.button i {
+    margin-left: 5px;
+}
+.line{
+
+    background-color: #015549;
+    padding-bottom: 1px;
 }

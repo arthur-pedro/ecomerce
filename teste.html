@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8">
 	<title></title>
 	<!-- Place favicon.ico in the root directory -->
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
@@ -25,55 +26,199 @@
 
 
 
-	<div class="container-fluid">
+	 <!-- Orçamento -->
+    <section id="feature-page">
+        
+        <div class="container-fluid" style="font-size: 15px; padding-top: 100px; background-color: #015549;">
         <div class="container">
-            <h2 class="text-center">Quer fazer um orçamento para o seu projeto?</h2>
+            
+            <h2 class="text-center color-fix">Quer fazer um orçamento para o seu projeto?</h2>
+            </br>
             <ul class="nav nav-tabs">
-                <li class="active"><a data-toggle="tab" href="#home">Vetorização</a></li>
-                <li><a data-toggle="tab" href="#menu1">Iustração</a></li>
-                <li><a data-toggle="tab" href="#menu2">Web Development</a></li>
+                <li class="active"><a class="color-fix" data-toggle="tab" href="#home">Design</a></li>
+                <<!-- li class=""><a class="color-fix" data-toggle="tab" href="#menu1">Iustração</a></li> -->
+                <li><a class="color-fix" data-toggle="tab" href="#menu2">Web Development</a></li>
                 <!-- <li><a data-toggle="tab" href="#menu3">Web Developer</a></li> -->
             </ul>
 
             <div class="tab-content">
-                <div id="home" class="tab-pane fade in active">
-                    <!-- </br> -->
-                    <h2>Form control: input</h2>
-                    <p>The form below contains two input elements; one of type text and one of type password:</p>
+                <!-- tab 1 -->
+                <div id="home" class="tab-pane fade in active text-center">
+                    </br>
                     <form>
                         <div class="form-group">
-                            <label for="comment">Comment:</label>
-                            <textarea class="form-control" rows="5" id="comment"></textarea>
+                            <div class="row">
+                                <div class="col-sm-4">
+
+                                    <h1></h1>
+                                    
+                                </div>
+                                <div class="col-sm-4 box" style="background-color: #fff;">
+                                    <h2>Explique o que você precisa!</h2>
+                                    <p>E tenha um orçamento totalmente grátis.</p>
+                                    <label class="text-center" for="sel1">Tipo de serviço: </label>
+                                    <select required class="form-control" id="sel1">
+                                    <option>Selecione uma opção...</option>
+                                    <option>Banners promocionais</option>
+                                    <option>Mascotes e personagens</option>
+                                    <option>Ícones e logotipos</option>
+                                    <option>Ilustrações avulsas</option>
+                                    
+                                    </select>
+                                    <br>
+                                    <label for="sel1">Prazo de entrega do serviço: </label>
+                                    <select required class="form-control" id="sel1">
+                                    <option>Selecione uma opção...</option>
+                                    <option>Menos de uma semana</option>
+                                    <option>Um semana</option>
+                                    <option>Dois semanas</option>
+                                    <option>Tês semanas</option>
+                                    <option>Um mês ou mais</option>
+                                    </select>
+                                    </br>
+                                    <label for="sel1">Prazo de entrega do serviço: </label>
+                                    <select required class="form-control" id="sel1">
+                                    <option>Selecione uma opção...</option>
+                                    <option>Menos de uma semana</option>
+                                    <option>Um semana</option>
+                                    <option>Dois semanas</option>
+                                    <option>Tês semanas</option>
+                                    <option>Um mês ou mais</option>
+                                    </select>
+                                    <br>
+                                    <label for="comment">Informações adicionais: </label>
+                                    <textarea class="form-control" placeholder="Informações específicas do projeto..." rows="5" id="comment"></textarea>    
+                                </div>
+                                <div class="col-sm-4">
+
+                                    <h1></h1>
+                                    
+                                </div>
+                            </div>
                         </div>
                     </form>
                 </div>
-                <div id="menu1" class="tab-pane fade">
-                    <!-- </br> -->
-                    <h2>Form control: input</h2>
-                    <p>The form below contains two input elements; one of type text and one of type password:</p>
+
+                <!-- tab 2 -->
+               <!--  <div id="menu1" class="tab-pane fade">
+                    </br>
                     <form>
                         <div class="form-group">
-                            <label for="comment">Comment:</label>
-                            <textarea class="form-control" rows="5" id="comment"></textarea>
+                            <div class="row">
+                                <div class="col-sm-4">
+
+                                    <h1></h1>
+                                    
+                                </div>
+                                <div class="col-sm-4 box" style="background-color: #fff;">
+                                    <h2>Explique o que você precisa!</h2>
+                                    <p>E tenha um orçamento totalmente grátis.</p>
+                                    <label class="text-center" for="sel1">Tipo de serviço: </label>
+                                    <select required class="form-control" id="sel1">
+                                    <option>Selecione uma opção...</option>
+                                    <option>Banners promocionais</option>
+                                    <option>Criação de personagem</option>
+                                    <option>Criação de logotipo</option>
+                                    <option>Vetorização de imagens</option>
+                                    
+                                    </select>
+                                    <br>
+                                    <label for="sel1">Prazo de entrega do serviço: </label>
+                                    <select required class="form-control" id="sel1">
+                                    <option>Selecione uma opção...</option>
+                                    <option>Menos de uma semana</option>
+                                    <option>Um semana</option>
+                                    <option>Dois semanas</option>
+                                    <option>Tês semanas</option>
+                                    <option>Um mês ou mais</option>
+                                    </select>
+                                    </br>
+                                    <label for="sel1">Prazo de entrega do serviço: </label>
+                                    <select required class="form-control" id="sel1">
+                                    <option>Selecione uma opção...</option>
+                                    <option>Menos de uma semana</option>
+                                    <option>Um semana</option>
+                                    <option>Dois semanas</option>
+                                    <option>Tês semanas</option>
+                                    <option>Um mês ou mais</option>
+                                    </select>
+                                    <br>
+                                    <label for="comment">Informações adicionais: </label>
+                                    <textarea class="form-control" placeholder="Informações específicas do projeto..." rows="5" id="comment"></textarea>    
+                                </div>
+                                <div class="col-sm-4">
+
+                                    <h1></h1>
+                                    
+                                </div>
+                            </div>
                         </div>
                     </form>
                 </div>
+ -->
+                <!-- tab 3 -->
                 <div id="menu2" class="tab-pane fade">
-                    <!-- </br> -->
-                    <h2>Form control: input</h2>
-                    <p>The form below contains two input elements; one of type text and one of type password:</p>
+                    </br>
                     <form>
                         <div class="form-group">
-                            <label for="comment">Comment:</label>
-                            <textarea class="form-control" rows="5" id="comment"></textarea>
+                            <div class="row">
+                                <div class="col-sm-4">
+
+                                    <h1></h1>
+                                    
+                                </div>
+                                <div class="col-sm-4 box" style="background-color: #fff;">
+                                    <h2>Explique o que você precisa!</h2>
+                                    <p>E tenha um orçamento totalmente grátis.</p>
+                                    <label class="text-center" for="sel1">Tipo de serviço: </label>
+                                    <select required class="form-control" id="sel1">
+                                    <option>Selecione uma opção...</option>
+                                    <option>Banners promocionais</option>
+                                    <option>Criação de personagem</option>
+                                    <option>Criação de logotipo</option>
+                                    <option>Vetorização de imagens</option>
+                                    
+                                    </select>
+                                    <br>
+                                    <label for="sel1">Prazo de entrega do serviço: </label>
+                                    <select required class="form-control" id="sel1">
+                                    <option>Selecione uma opção...</option>
+                                    <option>Menos de uma semana</option>
+                                    <option>Um semana</option>
+                                    <option>Dois semanas</option>
+                                    <option>Tês semanas</option>
+                                    <option>Um mês ou mais</option>
+                                    </select>
+                                    </br>
+                                    <label for="sel1">Prazo de entrega do serviço: </label>
+                                    <select required class="form-control" id="sel1">
+                                    <option>Selecione uma opção...</option>
+                                    <option>Menos de uma semana</option>
+                                    <option>Um semana</option>
+                                    <option>Dois semanas</option>
+                                    <option>Tês semanas</option>
+                                    <option>Um mês ou mais</option>
+                                    </select>
+                                    <br>
+                                    <label for="comment">Informações adicionais: </label>
+                                    <textarea class="form-control" placeholder="Informações específicas do projeto..." rows="5" id="comment"></textarea>    
+                                </div>
+                                <div class="col-sm-4">
+
+                                    <h1></h1>
+                                    
+                                </div>
+                            </div>
                         </div>
                     </form>
                 </div>
             </div>
-    	</div>
-	</div>
+        </div>
+    </div>
+    </div>
 
-
+    </section>
+    <!-- Orçamento -->
 
 
 
