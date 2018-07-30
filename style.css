@@ -491,6 +491,33 @@ preloader
 .button i {
     margin-left: 5px;
 }
+
+#btn-enviar-pedido{
+
+    padding: 30px 70px;
+    font-size: 20px;
+    background-color: #454445;
+
+}
+
+#btn-enviar-pedido:hover{
+
+    background-color: #086f68;
+    color: #ffffff;
+}
+
+#btn-remover{
+
+    background-color: #b91010cc;
+    color: #ffffff;
+}
+
+#btn-remover:hover{
+
+    background-color: #b91010b3;
+    color: #ffffff;
+}
+
 .line{
 
     background-color: #086f68;
