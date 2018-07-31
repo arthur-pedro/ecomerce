@@ -139,7 +139,7 @@ input:-webkit-autofill:focus {
     text-align: center;
     line-height: 2.5em;
     background-color: #ffffff;
-    color: #40A57D;
+    color: #2F5EBA;;
     border-radius: 100px;
     -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.1);
     box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.1);
@@ -147,7 +147,7 @@ input:-webkit-autofill:focus {
 }
 
 .social-menu li a:hover {
-    background-color: #40A57D;
+    background-color: #2f5ebacc;
     color: #ffffff;
     -webkit-box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.1);
     box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.1);
@@ -165,7 +165,7 @@ preloader
     height: 100%;
     background: #75cbe7;
     background: -webkit-gradient(linear, left top, left bottom, from(#75cbe7), to(#339F75));
-    background: linear-gradient(to bottom, #02a766 0%, #01333e 100%);
+    background: linear-gradient(to bottom, #1246a5 0%, #4300d0 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#75cbe7', endColorstr='#339F75', GradientType=0);
     z-index: 99999999999;
 }
@@ -298,6 +298,16 @@ preloader
     color: #ffffff;
 }
 
+
+
+.price-area {
+    background: url('images/header.jpg') no-repeat scroll center center / cover
+}
+
+.carrinho {
+    background: url('images/carrinho.jpg') no-repeat scroll center center / cover
+}
+
 .mainmenu-area .logo {
     text-transform: uppercase;
     /*letter-spacing: 0px;*/
@@ -348,11 +358,11 @@ preloader
 }
 
 .mainmenu-area.affix {
-    background-color: #086f68;
+    background-color: #242b31e6;
 }
 
 .section-padding {
-    padding: 120px 0;
+    padding: 60px 0;
 }
 
 .gray-bg {
@@ -362,14 +372,14 @@ preloader
 
 .header-color{
 
-    background: linear-gradient(to bottom, #009056 0%, #086f68 100%);
+    background: linear-gradient(to bottom, #534b71 0%, #534b71 100%);
     /*padding-bottom: 200px;*/
 
 }
 
 .footer-color{
 
-    background-color: #086f68;
+    background-color: #393f45;
     /*background: linear-gradient(to bottom, #009056 0%, #086f68 100%);*/
     padding-top: 70px;
 }
@@ -422,7 +432,7 @@ preloader
     top: 20px;
     width: 36px;
     height: 36px;
-    background: #086f68;
+    background: #534b71;
     border-radius: 50%;
     -webkit-transition: 0.3s;
     transition: 0.3s;
@@ -469,7 +479,7 @@ preloader
     padding: 8px 30px;
     border-radius: 50px;
     color: #ffffff;
-    background-color: #009056;
+    background-color: #52428d;
     -webkit-transition: 0.3s;
     transition: 0.3s;
     border: none;
@@ -479,12 +489,12 @@ preloader
 
 .button.white,
 .button:hover {
-    background-color: #009056b3;
+    background-color: #a630ba;
     color: #ffffff;
 }
 
 .button.white:hover {
-    background-color: #009056b3;
+    background-color: #a630ba;
     color: #ffffff;
 }
 
@@ -502,7 +512,7 @@ preloader
 
 #btn-enviar-pedido:hover{
 
-    background-color: #086f68;
+    background-color: #a630ba;
     color: #ffffff;
 }
 
@@ -520,7 +530,7 @@ preloader
 
 .line{
 
-    background-color: #086f68;
+    background-color: #534b71;
     padding-bottom: 1px;
 }
 
