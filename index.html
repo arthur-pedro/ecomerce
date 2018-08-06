@@ -27,6 +27,9 @@
         <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+
+
 </head>
 
 <body data-spy="scroll" data-target="#primary-menu">
@@ -107,12 +110,17 @@
                                     <div class="box-icon">
                                         <img src="images/service-icon-1.png" alt="">
                                     </div>
-                                    <h3 class="">Ícones & logotipos</h3>
-                                    <hr>
-                                    <h5>preço: R$200</h5>
-                                    <p>Criação de logotipo</p>
-                                    <hr>
-                                    <button class="btn button" data-toggle="modal" data-target="#buy">Escolher!</button>
+                                    
+                                    <div id="item_1">
+                                        <h3>Ícones & logotipos</h3>
+                                        <input type="text" name="pp">
+                                        <hr>
+                                        <h5>preço: R$ <span>200</span></h5>
+                                        <p>Criação de logotipo</p>
+                                        <hr>
+                                        <button class="btn button" onclick="get_item_1();" data-toggle="modal" data-target="#buy">Escolher!</button>    
+                                    </div>
+                                    
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-6 col-lg-4 banner-text">
@@ -121,12 +129,16 @@
                                         <img src="images/service-icon-1.png" alt="">
                                     </div>
                                     <span class="price-info"><span class="ti-crown"></span></span>
-                                    <h3 class="">Ícones & logotipos</h3>
-                                     <hr>
-                                    <h5>preço: R$200</h5>
+                                    
+                                    <div id="item_2">
+                                    <h3 class="">Vetorização de Personagens</h3>
+                                    <hr>
+                                    <h5>preço: R$ <span>120</span></h5>
                                     <p>Criação de logotipo</p>
-                                     <hr>
-                                    <button class="btn button" data-toggle="modal" data-target="#buy">Escolher!</button>
+                                    <hr>
+                                    <button class="btn button" onclick="get_item_2();" data-toggle="modal" data-target="#buy">Escolher!</button>
+                                    </div>
+                                    
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-6 col-lg-4 banner-text">
@@ -370,6 +382,7 @@
     <!--Vendor-JS-->
     <script src="js/vendor/jquery-1.12.4.min.js"></script>
     <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/add_item.js"></script>
     <!--Plugin-JS-->
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/contact-form.js"></script>

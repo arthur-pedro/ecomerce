@@ -61,7 +61,7 @@
 
                 </div>
                 <ul class="nav navbar-nav navbar-right">
-                    <li ><a href="index.html">Voltar às compras</a></li>
+                    <li ><a href="index.php">Voltar às compras</a></li>
                     <li><a href="#faq-page">Como fazer compras</a></li>
                     <li class="active"><a href="#"><span class="glyphicon glyphicon-shopping-cart"> R$0.00 (<span class="qtd_produtos_menu"></span> itens)</span></a></li>
                 </ul>
@@ -96,15 +96,62 @@
         <div class="row add-item">
 
             <div class="meu-item" id="div-remove"></div>
+                <?php
+
+                                       
+                    session_start();    
+
+                    // require("php/conexao_mysql.php");
+
+
+                    // $item = $_SESSION['item'];
+
+
+                    // $query = "SELECT * FROM servicos WHERE nome = '$item'";
+
+                    // $result = $conn->query($query);
+
+                    // $row = $result->fetch_assoc();
+                    
+                    // $nome = $row['nome'];
+                    // $preco = $row['preco'];
+
+                    $teste = $_SESSION['carrinho']; 
+                    
+                    foreach ($teste as $key) {
+                        ?> 
+
+                        <div class="col-md-12">
+                            <div class="box">
+                            <div class="box-icon">
+                                <img src="images/service-icon-1.png" alt="">
+                            </div>
+                                <h3 class=""><?php echo 'R$ '.$key; ?></h3>
+                                <h5>R$ 1000</h5>
+                                <p>Criação de Cartão visita</p>
+                                <button id="btn-remover" class="btn button">Remover</button>
+                            </div>
+                        </div>
+
+                        <?php
+                    
+                    }
+                    
+                        
+                    
+
+
+
+                ?>
 <!-- 
             <div class="col-md-12">
                 <div class="box">
                 <div class="box-icon">
                     <img src="images/service-icon-1.png" alt="">
                 </div>
-                    <h3 class="">Ícones & logotipos</h3>
-                    <h5>preço: R$200</h5>
-                    <p>Criação de logotipo</p>
+                    <h3 class=""><?php $nome ?></h3>
+                    <h5><?php $preco ?></h5>
+                    <p>Criação de Cartão visita</p>
                     <button id="btn-remover" class="btn button">Remover</button>
                 </div>
             </div>
@@ -137,7 +184,7 @@
     </br>
     <div class="container">
         <div class="row text-center">
-            <button id="btn-enviar-pedido" onclick="teste_2();" class="btn button">ENVIAR PEDIDO</button>
+            <button id="btn-enviar-pedido" class="btn button">ENVIAR PEDIDO</button>
         </div>
     </div>
 

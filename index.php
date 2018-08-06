@@ -1,3 +1,8 @@
+<?php
+	
+	
+?>
+
 <!doctype html>
 <html class="no-js" lang="zxx">
 
@@ -27,10 +32,13 @@
         <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+
+
 </head>
 
 <body data-spy="scroll" data-target="#primary-menu">
-<div class="container-flui"></div>
+<div class="container-fluid"></div>
     <div class="preloader">
         <div class="sk-folding-cube">
             <div class="sk-cube1 sk-cube"></div>
@@ -41,7 +49,7 @@
     </div>
     <!--Mainmenu-area-->
     <div class="mainmenu-area" data-spy="affix" data-offset-top="100">
-        <div class="container">
+        <div class="container-fluid">
             <!--Logo-->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#primary-menu">
@@ -56,92 +64,140 @@
             <!--Logo/-->
             <nav class="collapse navbar-collapse" id="primary-menu">
                 <div class="navbar-header">
-                    
-
-
                 </div>
                 <ul class="nav navbar-nav navbar-right">
-                    <li ><a href="index.html">Voltar às compras</a></li>
-                    <li><a href="#faq-page">Como fazer compras</a></li>
-                    <li class="active"><a href="#"><span class="glyphicon glyphicon-shopping-cart"> R$0.00 (<span class="qtd_produtos_menu"></span> itens)</span></a></li>
+                    <li class="active"><a href="#home-page">Home</a></li>
+                    <li><a href="#service-page">Serviços</a></li>
+                    <li><a href="#faq-page">Dúvidas</a></li>
+                    <li><a href="#contact-page">Contato</a></li>
+                    <li><a href="carrinho.php"><span class="glyphicon glyphicon-shopping-cart"> R$0.00 (0 itens)</span></a></li>
                 </ul>
             </nav>
         </div>
     </div>
     <!--Mainmenu-area/-->
 
-   
-    <!--Mainmenu-area/-->
-
-    <header class="header-color" id="home-page">
+    <header class="price-area section-padding" id="home-page">
         <div class="">
              
         </div>
         <div class="container" style="padding-top: 200px; padding-bottom: 50px;">
             <div class="row">
                 <div class="col-xs-12 col-md-7 header-text page-title">
-                    <h2 class="color-fix">Meus itens</h2>
-                    <p class="color-fix">Itens no carrinho podem ser removidos clicando no botão "remover"</p>
+                    <h2 class="color-fix">It’s all about Promoting your Business</h2>
+                    <p class="color-fix">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero ex inventore vel error quibusdam animi fugiat, doloribus dolores consectetur nulla deleniti sint blanditiis quod debitis quis vitae officiis tempora numquam.</p>
                     
                 </div>
             </div>
         </div>
     </header>
+    
+
+    <!--Feature-area-->
+    <section class="gray-bg section-padding" id="service-page">
+        <!-- Container -->
+        <div class="container">
+                <h2 class="text-center" style="text-transform: uppercase;">Filtrar categoria</h2>
+                </br>               
+                <ul class="nav nav-tabs">
+                    <li class="active"><a data-toggle="tab" href="#menu1">Design</a></li>
+                    <li><a data-toggle="tab" href="#menu2">Web Development</a></li>
+                </ul>
+                </br>
+                </br>
+            <!-- tab content -->
+            <div class="tab-content">
+                <!-- menu 1 -->
+                <div id="menu1" class="tab-pane fade in active">
+                    <!-- row -->
+                    <div class="row">
+                        <!-- <form method="post"> -->
+                           
+                           <div class="col-xs-12 col-sm-6 col-lg-4 banner-text">
+                                <div class="box">
+                                    <div class="box-icon">
+                                        <img src="images/service-icon-1.png" alt="">
+                                    </div>
+                                    
+                                    <div id="item_1">
+                                        <h3>Cartão Visita</h3>
+                                        <!-- <input style="display:none" type="text" value="teste" name="teste"> -->
+                                        <hr>
+                                        <h5>preço: R$ <span>150</span></h5>
+                                        <p>Criação de cartão visita</p>
+                                        <hr>
+                                        <button onclick="add_carrinho('Cartão Visita');" name="product" value="Cartão Visita" class="btn button" data-toggle="modal" data-target="#buy">Escolher!</button>   
+                                    </div> 
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-lg-4 banner-text">
+                                <div class="box">
+                                    <div class="box-icon">
+                                        <img src="images/service-icon-1.png" alt="">
+                                    </div>
+                                    <div id="item_2">
+                                        <h3>Banner</h3>
+                                        <!-- <input style="display:none" type="text" value="teste" name="teste"> -->
+                                        <hr>
+                                        <h5>preço: R$ <span>200</span></h5>
+                                        <p>Criação de teste</p>
+                                        <hr>
+                                        <button onclick="add_carrinho('Banner');" name="product" value="Banner" class="btn button" data-toggle="modal" data-target="#buy">Escolher!</button>       
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            
+                        <!-- </form> -->
+                    </div>
+                    <!-- row -->
+                </div>    
+
+                <!-- modal de compras -->
+                <div class="modal fade" id="buy" role="dialog" style="padding-top: 100px;">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                              <h4 class="modal-title">Item adicionado no carrinho!</h4>
+                            </div>
+                            <div class="modal-body">
+                              <p>Fechar esta janela para continuar comprando.</p>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn button" data-dismiss="modal">Continuar comprando</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- modal de compras -->
+
+                <div id="menu2" class="tab-pane fade">
+                  
+                    <!-- SERVIÇOES DE WEB DEVELOPER -->
+                    <h1>Em Manutenção...</h1>
+
+                </div>   
+            </div>  
+        </div>
+        
+        <!-- Container -->
+     </section>
+    <!--Feature-area/-->
 
 
-    <!-- Carrinho -->
-    </br>
-    </br>
-    <div class="container">
-        <div class="row add-item">
-
-            <div class="meu-item" id="div-remove"></div>
+    <div class="line container"></div>
+    <!-- <img class="line" src="images/divisoria.png"> -->
 <!-- 
-            <div class="col-md-12">
-                <div class="box">
-                <div class="box-icon">
-                    <img src="images/service-icon-1.png" alt="">
-                </div>
-                    <h3 class="">Ícones & logotipos</h3>
-                    <h5>preço: R$200</h5>
-                    <p>Criação de logotipo</p>
-                    <button id="btn-remover" class="btn button">Remover</button>
-                </div>
-            </div>
-            <div class="col-md-12">
-                <div class="box">
-                    <div class="box-icon">
-                        <img src="images/service-icon-1.png" alt="">
-                    </div>
-                    <h3 class="">Ícones & logotipos</h3>
-                    <h5>preço: R$200</h5>
-                    <p>Criação de logotipo</p>
-                    <button id="btn-remover" class="btn button">Remover</button>
-                </div>
-            </div>
-            <div class="col-md-12">
-                <div class="box">
-                    <div class="box-icon">
-                        <img src="images/service-icon-1.png" alt="">
-                    </div>
-                    <h3 class="">Ícones & logotipos</h3>
-                    <h5>preço: R$200</h5>
-                    <p>Criação de logotipo</p>
-                    <button id="btn-remover" onclick="" class="btn button">Remover</button>
-                </div>
-            </div> -->
-        </div>
-    </div>
-    <!-- enviar pedido -->
-    </br>
-    </br>
-    <div class="container">
-        <div class="row text-center">
-            <button id="btn-enviar-pedido" onclick="teste_2();" class="btn button">ENVIAR PEDIDO</button>
-        </div>
-    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
-    <!-- enviar pedido -->
+
+                
+            </div>
+        </div>
+    </div> -->
 
 
     <!-- dúvidas -->
@@ -150,7 +206,7 @@
             <div class="row">
                 <div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center">
                     <div class="page-title">
-                        <h2>Como eu faço as compras?</h2>
+                        <h2>Como isso funciona?</h2>
                         <p>Contrato, orçamento, formas de pagamento, entre outras dúvidas frequentes</p>
                     </div>
                 </div>
@@ -163,7 +219,8 @@
                                 <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="true">Como eu faço para contratar seu serviço?</a>
                             </h4>
                             <div id="collapse1" class="panel-collapse collapse in">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodas temporo incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrd exercitation ullamco laboris nisi ut aliquip ex comodo consequat. Duis aute dolor in reprehenderit.</p>
+                                <p>Primeiro é necessário adicionar ao carrinho os serviços que você precisa. Depois 
+                                é só enviar sua proposta pra mim. Após isso, pode ficar tranquilo, que eu entro em contato com você!</p>
                             </div>
                         </div>
                         <div class="panel">
@@ -196,7 +253,6 @@
         </div>
     </section>
     <!-- dpuvidas -->
-   
 
     <!-- contato -->
     <footer class="footer-area relative sky-bg footer-color" id="contact-page ">
@@ -260,7 +316,7 @@
                             <li><a href="#"><i class="ti-twitter"></i></a></li>
                             <li><a href="#"><i class="ti-google"></i></a></li>
                             <li><a href="#"><i class="ti-linkedin"></i></a></li>
-                            <li><a href="#"><i class="ti-github"></i></a></li>
+                            <li><a href="https://github.com/arthur-pedro"><i class="ti-github"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -280,6 +336,7 @@
     <!-- contato -->
 
     <!--Vendor-JS-->
+    
     <script src="js/vendor/jquery-1.12.4.min.js"></script>
     <script src="js/vendor/bootstrap.min.js"></script>
     <script src="js/add_item.js"></script>
