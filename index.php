@@ -1,8 +1,10 @@
-<?php
-	
-	
-?>
 
+<?php  
+    session_start();
+    if(!isset($_SESSION['qtd_produtos'])){
+        $_SESSION['qtd_produtos'] = 0;
+    }
+?>
 <!doctype html>
 <html class="no-js" lang="zxx">
 
@@ -70,17 +72,13 @@
                     <li><a href="#service-page">Serviços</a></li>
                     <li><a href="#faq-page">Dúvidas</a></li>
                     <li><a href="#contact-page">Contato</a></li>
-                    <li><a href="carrinho.php"><span class="glyphicon glyphicon-shopping-cart"> R$0.00 (0 itens)</span></a></li>
+                    <li><a href="carrinho.php"><span class="glyphicon glyphicon-shopping-cart"> R$0.00 (<span><?php echo $_SESSION['qtd_produtos']; ?></span> itens)</span></a></li>
                 </ul>
             </nav>
         </div>
     </div>
     <!--Mainmenu-area/-->
-
     <header class="price-area section-padding" id="home-page">
-        <div class="">
-             
-        </div>
         <div class="container" style="padding-top: 200px; padding-bottom: 50px;">
             <div class="row">
                 <div class="col-xs-12 col-md-7 header-text page-title">
@@ -91,7 +89,7 @@
             </div>
         </div>
     </header>
-    
+    <!--Mainmenu-area/-->
 
     <!--Feature-area-->
     <section class="gray-bg section-padding" id="service-page">
@@ -111,7 +109,7 @@
                 <div id="menu1" class="tab-pane fade in active">
                     <!-- row -->
                     <div class="row">
-                        <!-- <form method="post"> -->
+                        <form method="POST">
                            
                            <div class="col-xs-12 col-sm-6 col-lg-4 banner-text">
                                 <div class="box">
@@ -121,12 +119,11 @@
                                     
                                     <div id="item_1">
                                         <h3>Cartão Visita</h3>
-                                        <!-- <input style="display:none" type="text" value="teste" name="teste"> -->
                                         <hr>
                                         <h5>preço: R$ <span>150</span></h5>
                                         <p>Criação de cartão visita</p>
                                         <hr>
-                                        <button onclick="add_carrinho('Cartão Visita');" name="product" value="Cartão Visita" class="btn button" data-toggle="modal" data-target="#buy">Escolher!</button>   
+                                        <button type="button" onclick="add_carrinho('Cartão Visita');" name="product" value="[Cartão Visita,150]" class="btn button" data-toggle="modal" data-target="#buy">Escolher!</button>   
                                     </div> 
                                 </div>
                             </div>
@@ -142,13 +139,13 @@
                                         <h5>preço: R$ <span>200</span></h5>
                                         <p>Criação de teste</p>
                                         <hr>
-                                        <button onclick="add_carrinho('Banner');" name="product" value="Banner" class="btn button" data-toggle="modal" data-target="#buy">Escolher!</button>       
+                                        <button type="button" onclick="add_carrinho('Banner');" name="product" value="Banner" class="btn button" data-toggle="modal" data-target="#buy">Escolher!</button>       
                                     </div>
                                     
                                 </div>
                             </div>
                             
-                        <!-- </form> -->
+                        </form>
                     </div>
                     <!-- row -->
                 </div>    
@@ -165,7 +162,7 @@
                               <p>Fechar esta janela para continuar comprando.</p>
                             </div>
                             <div class="modal-footer">
-                              <button type="button" class="btn button" data-dismiss="modal">Continuar comprando</button>
+                              <button onclick="att_pagina();" type="button" class="btn button" data-dismiss="modal">Continuar comprando</button>
                             </div>
                         </div>
                     </div>
@@ -187,18 +184,7 @@
 
 
     <div class="line container"></div>
-    <!-- <img class="line" src="images/divisoria.png"> -->
-<!-- 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-
-
-                
-            </div>
-        </div>
-    </div> -->
-
+  
 
     <!-- dúvidas -->
     <section class="gray-bg section-padding" id="faq-page">
@@ -313,8 +299,8 @@
                     <div class="col-xs-12 col-sm-12 text-center">
                         <ul class="social-menu">
                             <li><a href="#"><i class="ti-facebook"></i></a></li>
-                            <li><a href="#"><i class="ti-twitter"></i></a></li>
-                            <li><a href="#"><i class="ti-google"></i></a></li>
+                            <li><a href="#"><i class="ti-pinterest"></i></a></li>
+                            <li><a href="#"><i class="ti-instagram"></i></a></li>
                             <li><a href="#"><i class="ti-linkedin"></i></a></li>
                             <li><a href="https://github.com/arthur-pedro"><i class="ti-github"></i></a></li>
                         </ul>

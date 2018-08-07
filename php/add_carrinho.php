@@ -4,12 +4,40 @@
 
 	require("conexao_mysql.php");
 
+	// $produto = 'Banner';
+
+	// $query = "SELECT nome, preco, descricao FROM servicos WHERE id = 1";
+
+	// $result = $conn->query($query);
+
+	// foreach ($result as $key) {
+	// 	foreach ($key as  $value) {
+	// 		echo $value[];
+	// 	}
+	// }
+	
+	//Tratamento de variáveis
+	if(isset($_POST['product'])){
+
+		$_SESSION['carrinho'][] = $_POST['product'];
+
+		if(isset($_SESSION['carrinho'])){
+
+        	$_SESSION['qtd_produtos'] = count($_SESSION['carrinho']);
+
+	    }else{
+
+	        $_SESSION['qtd_produtos'] = 0;
+
+	    }
+	}else{
+		echo "Carrinho vazio";
+	}
 	
 
-	//$btn_1 = $_POST['btn_1'];
-	// echo $_GET['vetor'];
-	// echo 'ok';
-	$_SESSION['carrinho'][] = $_POST['product'];
+
+
+	
 	
  	// echo var_dump($_SESSION['carrinho']);
 
@@ -21,7 +49,7 @@
 	
 	// $_SESSION['item'] = $row['nome'];
 
-
+	// session_destroy();
 
 	// header('Location: ../index.php')
 

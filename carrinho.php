@@ -1,3 +1,10 @@
+
+<?php  
+    session_start();
+    if(!isset($_SESSION['qtd_produtos'])){
+        $_SESSION['qtd_produtos'] = 0;
+    }
+?>
 <!doctype html>
 <html class="no-js" lang="zxx">
 
@@ -55,15 +62,10 @@
             </div>
             <!--Logo/-->
             <nav class="collapse navbar-collapse" id="primary-menu">
-                <div class="navbar-header">
-                    
-
-
-                </div>
                 <ul class="nav navbar-nav navbar-right">
                     <li ><a href="index.php">Voltar às compras</a></li>
                     <li><a href="#faq-page">Como fazer compras</a></li>
-                    <li class="active"><a href="#"><span class="glyphicon glyphicon-shopping-cart"> R$0.00 (<span class="qtd_produtos_menu"></span> itens)</span></a></li>
+                    <li class="active"><a href="#"><span class="glyphicon glyphicon-shopping-cart"> R$ <?php echo $total_preco ?>(<span class="qtd_produtos_menu"><?php echo $_SESSION['qtd_produtos'];?></span> itens)</span></a></li>
                 </ul>
             </nav>
         </div>
@@ -74,9 +76,6 @@
     <!--Mainmenu-area/-->
 
     <header class="header-color" id="home-page">
-        <div class="">
-             
-        </div>
         <div class="container" style="padding-top: 200px; padding-bottom: 50px;">
             <div class="row">
                 <div class="col-xs-12 col-md-7 header-text page-title">
@@ -97,86 +96,61 @@
 
             <div class="meu-item" id="div-remove"></div>
                 <?php
-
-                                       
-                    session_start();    
-
-                    // require("php/conexao_mysql.php");
-
-
-                    // $item = $_SESSION['item'];
-
-
-                    // $query = "SELECT * FROM servicos WHERE nome = '$item'";
-
-                    // $result = $conn->query($query);
-
-                    // $row = $result->fetch_assoc();
                     
-                    // $nome = $row['nome'];
-                    // $preco = $row['preco'];
+                    require("php/conexao_mysql.php");
 
-                    $teste = $_SESSION['carrinho']; 
-                    
-                    foreach ($teste as $key) {
+                    // Inicialização de variáveis
+                    $total_preco = 0;
+
+                    if(isset($_SESSION['carrinho'])){
+
+                        $teste = $_SESSION['carrinho'];
+
+                        for ($i=0; $i < count($teste); $i++){ 
+                            $query[] = "SELECT nome, preco, descricao FROM servicos WHERE nome = '$teste[$i]'";
+                        }
+
+                        // echo var_dump($query);
+                        
+                        foreach ($query as $key) {
+                            $result = $conn->query($key);
+
+                            while ($row = $result->fetch_assoc()) {
+                                // printf ("%s (%s) (%s)\n", $row["nome"], $row["preco"], $row["descricao"]);
+
+                                $total_preco = $total_preco + $row["preco"];
+
+                                // inicio do html
+                                ?>
+                                <div class="col-md-12">
+                                    <div class="box">
+                                    <div class="box-icon">
+                                        <img src="images/service-icon-1.png" alt="">
+                                    </div>
+                                        <h3 class=""><?php echo $row["nome"]; ?></h3>
+                                        <h5>R$ <?php echo $row["preco"]; ?></h5>
+                                        <p><?php echo $row["descricao"]; ?></p>
+                                        <button id="btn-remover" class="btn button">Remover</button>
+                                    </div>
+                                </div>
+                                <?php
+                                // fim do html
+                            }
+                        }
+                    }else{
                         ?> 
 
                         <div class="col-md-12">
                             <div class="box">
-                            <div class="box-icon">
-                                <img src="images/service-icon-1.png" alt="">
-                            </div>
-                                <h3 class=""><?php echo 'R$ '.$key; ?></h3>
-                                <h5>R$ 1000</h5>
-                                <p>Criação de Cartão visita</p>
-                                <button id="btn-remover" class="btn button">Remover</button>
+                                <h3 class="">Carrinho vazio</h3>
+                                <p>Voltar para página inicial para continuar comprando</p>
                             </div>
                         </div>
 
-                        <?php
-                    
+                        <?php 
                     }
-                    
-                        
-                    
-
-
-
                 ?>
-<!-- 
-            <div class="col-md-12">
-                <div class="box">
-                <div class="box-icon">
-                    <img src="images/service-icon-1.png" alt="">
-                </div>
-                    <h3 class=""><?php $nome ?></h3>
-                    <h5><?php $preco ?></h5>
-                    <p>Criação de Cartão visita</p>
-                    <button id="btn-remover" class="btn button">Remover</button>
-                </div>
-            </div>
-            <div class="col-md-12">
-                <div class="box">
-                    <div class="box-icon">
-                        <img src="images/service-icon-1.png" alt="">
-                    </div>
-                    <h3 class="">Ícones & logotipos</h3>
-                    <h5>preço: R$200</h5>
-                    <p>Criação de logotipo</p>
-                    <button id="btn-remover" class="btn button">Remover</button>
-                </div>
-            </div>
-            <div class="col-md-12">
-                <div class="box">
-                    <div class="box-icon">
-                        <img src="images/service-icon-1.png" alt="">
-                    </div>
-                    <h3 class="">Ícones & logotipos</h3>
-                    <h5>preço: R$200</h5>
-                    <p>Criação de logotipo</p>
-                    <button id="btn-remover" onclick="" class="btn button">Remover</button>
-                </div>
-            </div> -->
+
         </div>
     </div>
     <!-- enviar pedido -->
@@ -184,7 +158,11 @@
     </br>
     <div class="container">
         <div class="row text-center">
-            <button id="btn-enviar-pedido" class="btn button">ENVIAR PEDIDO</button>
+            <div class="col-sm-3"></div>
+            <div class="col-sm-3"><button id="btn-enviar-pedido" class="btn button">Enviar pedido</button></div>
+            <div class="col-sm-3"><button onclick="limpar_carrinho();" type="button" id="btn-enviar-pedido" class="btn button">Limpar carrinho</button></div>
+            </ul>
+            <div class="col-sm-3"></div>
         </div>
     </div>
 
@@ -276,7 +254,6 @@
                                         <img src="images/phone-arrow.png" alt="">
                                     </div>
                                     <p class="color-fix"><strong>Telefone: </strong>+55 (81) 99635-4295
-                                        <!-- <a href="callto:8801812726495">+55 (81) 99635-4295</a> <br /> -->
                                     </p>
                                 </div>
                             </address>
@@ -288,7 +265,6 @@
                                         <img src="images/mail-arrow.png" alt="">
                                     </div>
                                     <p class="color-fix"><strong>E-mail: </strong>arthurpedroweb@gmail.com
-                                        <!-- <a href="mailto:youremail@example.com">arthurpedroweb@gmail.com</a> <br /> -->
                                     </p>
                                 </div>
                             </address>
@@ -304,10 +280,10 @@
                     <div class="col-xs-12 col-sm-12 text-center">
                         <ul class="social-menu">
                             <li><a href="#"><i class="ti-facebook"></i></a></li>
-                            <li><a href="#"><i class="ti-twitter"></i></a></li>
-                            <li><a href="#"><i class="ti-google"></i></a></li>
+                            <li><a href="#"><i class="ti-pinterest"></i></a></li>
+                            <li><a href="#"><i class="ti-instagram"></i></a></li>
                             <li><a href="#"><i class="ti-linkedin"></i></a></li>
-                            <li><a href="#"><i class="ti-github"></i></a></li>
+                            <li><a href="https://github.com/arthur-pedro"><i class="ti-github"></i></a></li>
                         </ul>
                     </div>
                 </div>

@@ -504,7 +504,8 @@ preloader
 
 #btn-enviar-pedido{
 
-    padding: 30px 70px;
+    padding: 20px 50px;
+    margin-bottom: 20px;
     font-size: 20px;
     background-color: #454445;
 
@@ -512,7 +513,7 @@ preloader
 
 #btn-enviar-pedido:hover{
 
-    background-color: #a630ba;
+    background-color: #604360;
     color: #ffffff;
 }
 
