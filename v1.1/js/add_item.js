@@ -19,6 +19,10 @@ function add_carrinho(produto){
 	}
 }
 
+function enviar_email(){
+
+}
+
 function limpar_carrinho(){
 	
 	$.ajax({

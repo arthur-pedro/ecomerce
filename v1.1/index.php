@@ -1,6 +1,10 @@
 
 <?php  
+    
     session_start();
+
+    require("php/myFunctions.php");
+
     if(!isset($_SESSION['qtd_produtos'])){
         $_SESSION['qtd_produtos'] = 0;
     }
@@ -34,10 +38,13 @@
         <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
         <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+
+
 </head>
 
 <body data-spy="scroll" data-target="#primary-menu">
-<div class="container-flui"></div>
+<div class="container-fluid"></div>
     <div class="preloader">
         <div class="sk-folding-cube">
             <div class="sk-cube1 sk-cube"></div>
@@ -48,7 +55,7 @@
     </div>
     <!--Mainmenu-area-->
     <div class="mainmenu-area" data-spy="affix" data-offset-top="100">
-        <div class="container">
+        <div class="container-fluid">
             <!--Logo-->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#primary-menu">
@@ -62,112 +69,162 @@
             </div>
             <!--Logo/-->
             <nav class="collapse navbar-collapse" id="primary-menu">
+                <div class="navbar-header">
+                </div>
                 <ul class="nav navbar-nav navbar-right">
-                    <li ><a href="index.php">Voltar às compras</a></li>
-                    <li><a href="#faq-page">Como fazer compras</a></li>
-                    <li class="active"><a href="#"><span class="glyphicon glyphicon-shopping-cart"> R$ <?php echo $total_preco ?>(<span class="qtd_produtos_menu"><?php echo $_SESSION['qtd_produtos'];?></span> itens)</span></a></li>
+                    <li class="active"><a href="#home-page">Home</a></li>
+                    <li><a href="#service-page">Serviços</a></li>
+                    <li><a href="#faq-page">Dúvidas</a></li>
+                    <li><a href="#contact-page">Contato</a></li>
+                    <li><a href="carrinho.php"><span class="glyphicon glyphicon-shopping-cart"> R$<span><?php echo calcula_preco().' '; ?></span> (<span><?php echo $_SESSION['qtd_produtos']; ?></span> itens)</span></a></li>
                 </ul>
             </nav>
         </div>
     </div>
     <!--Mainmenu-area/-->
-
-   
-    <!--Mainmenu-area/-->
-
-    <header class="header-color" id="home-page">
+    <header class="price-area section-padding" id="home-page">
         <div class="container" style="padding-top: 200px; padding-bottom: 50px;">
             <div class="row">
                 <div class="col-xs-12 col-md-7 header-text page-title">
-                    <h2 class="color-fix">Meus itens</h2>
-                    <p class="color-fix">Itens no carrinho podem ser removidos clicando no botão "remover"</p>
+                    <h2 class="color-fix">It’s all about Promoting your Business</h2>
+                    <p class="color-fix">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero ex inventore vel error quibusdam animi fugiat, doloribus dolores consectetur nulla deleniti sint blanditiis quod debitis quis vitae officiis tempora numquam.</p>
                     
                 </div>
             </div>
         </div>
     </header>
+    <!--Mainmenu-area/-->
 
-
-    <!-- Carrinho -->
-    </br>
-    </br>
-    <div class="container">
-        <div class="row add-item">
-
-            <div class="meu-item" id="div-remove"></div>
-                <?php
-                    
-                    require("php/conexao_mysql.php");
-
-                    // Inicialização de variáveis
-                    $total_preco = 0;
-
-                    if(isset($_SESSION['carrinho'])){
-
-                        $teste = $_SESSION['carrinho'];
-
-                        for ($i=0; $i < count($teste); $i++){ 
-                            $query[] = "SELECT nome, preco, descricao FROM servicos WHERE nome = '$teste[$i]'";
-                        }
-
-                        // echo var_dump($query);
-                        
-                        foreach ($query as $key) {
-                            $result = $conn->query($key);
-
-                            while ($row = $result->fetch_assoc()) {
-                                // printf ("%s (%s) (%s)\n", $row["nome"], $row["preco"], $row["descricao"]);
-
-                                $total_preco = $total_preco + $row["preco"];
-
-                                // inicio do html
-                                ?>
-                                <div class="col-md-12">
-                                    <div class="box">
+    <!--Feature-area-->
+    <section class="gray-bg section-padding" id="service-page">
+        <!-- Container -->
+        <div class="container">
+                <h2 class="text-center" style="text-transform: uppercase;">Filtrar categoria</h2>
+                </br>               
+                <ul class="nav nav-tabs">
+                    <li class="active"><a data-toggle="tab" href="#menu1">Design</a></li>
+                    <li><a data-toggle="tab" href="#menu2">Web Development</a></li>
+                </ul>
+                </br>
+                </br>
+            <!-- tab content -->
+            <div class="tab-content">
+                <!-- menu 1 -->
+                <div id="menu1" class="tab-pane fade in active">
+                    <!-- form -->
+                    <form method="POST">
+                        <!-- row -->
+                        <div class="row">
+                           <div class="col-xs-12 col-sm-6 col-lg-4 banner-text">
+                                <div class="box">
                                     <div class="box-icon">
                                         <img src="images/service-icon-1.png" alt="">
                                     </div>
-                                        <h3 class=""><?php echo $row["nome"]; ?></h3>
-                                        <h5>R$ <?php echo $row["preco"]; ?></h5>
-                                        <p><?php echo $row["descricao"]; ?></p>
-                                        <button id="btn-remover" class="btn button">Remover</button>
+                                    
+                                    <div id="item_1">
+                                        <h3>Cartão Visita</h3>
+                                        <hr>
+                                        <h5>preço: R$ <span>150</span></h5>
+                                        <p>Criação de cartão visita</p>
+                                        <hr>
+                                        <button type="button" onclick="add_carrinho('Cartão Visita');" name="product" value="[Cartão Visita,150]" class="btn button" data-toggle="modal" data-target="#buy">Escolher!</button>   
+                                    </div> 
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-lg-4 banner-text">
+                                <div class="box">
+                                    <div class="box-icon">
+                                        <img src="images/service-icon-1.png" alt="">
+                                    </div>
+                                    <div id="item_2">
+                                        <h3>Banner</h3>
+                                        <!-- <input style="display:none" type="text" value="teste" name="teste"> -->
+                                        <hr>
+                                        <h5>preço: R$ <span>200</span></h5>
+                                        <p>Criação de teste</p>
+                                        <hr>
+                                        <button type="button" onclick="add_carrinho('Banner');" name="product" value="Banner" class="btn button" data-toggle="modal" data-target="#buy">Escolher!</button>       
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-lg-4 banner-text">
+                                <div class="box">
+                                    <div class="box-icon">
+                                        <img src="images/service-icon-1.png" alt="">
+                                    </div>
+                                    <div id="item_2">
+                                        <h3>Vetorização de imagens</h3>
+                                        <!-- <input style="display:none" type="text" value="teste" name="teste"> -->
+                                        <hr>
+                                        <h5>preço: R$ <span>130</span></h5>
+                                        <p>Criação de teste</p>
+                                        <hr>
+                                        <button type="button" onclick="add_carrinho('Vetorização de imagens');" name="product" value="Vetorização de imagens" class="btn button" data-toggle="modal" data-target="#buy">Escolher!</button>       
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-6 col-lg-4 banner-text">
+                                    <div class="box">
+                                        <div class="box-icon">
+                                            <img src="images/service-icon-1.png" alt="">
+                                        </div>
+                                        <div id="item_2">
+                                            <h3>Ilustração</h3>
+                                            <!-- <input style="display:none" type="text" value="teste" name="teste"> -->
+                                            <hr>
+                                            <h5>preço: R$ <span>130</span></h5>
+                                            <p>ilustrações avulsas</p>
+                                            <hr>
+                                            <button type="button" onclick="add_carrinho('Ilustração');" name="product" value="Ilustração" class="btn button" data-toggle="modal" data-target="#buy">Escolher!</button>       
+                                        </div>
+                                        
                                     </div>
                                 </div>
-                                <?php
-                                // fim do html
-                            }
-                        }
-                    }else{
-                        ?> 
-
-                        <div class="col-md-12">
-                            <div class="box">
-                                <h3 class="">Carrinho vazio</h3>
-                                <p>Voltar para página inicial para continuar comprando</p>
+                                
                             </div>
                         </div>
+                        <!-- row -->
+                    </form>
+                </div>    
 
-                        <?php 
-                    }
-                ?>
+                <!-- modal de compras -->
+                <div class="modal fade" id="buy" role="dialog" style="padding-top: 100px;">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                              <h4 class="modal-title">Item adicionado no carrinho!</h4>
+                            </div>
+                            <div class="modal-body">
+                              <p>Fechar esta janela para continuar comprando.</p>
+                            </div>
+                            <div class="modal-footer">
+                              <button onclick="att_pagina();" type="button" class="btn button" data-dismiss="modal">Continuar comprando</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- modal de compras -->
 
+                <div id="menu2" class="tab-pane fade">
+                  
+                    <!-- SERVIÇOES DE WEB DEVELOPER -->
+                    <h1>Em Manutenção...</h1>
+
+                </div>   
+            </div>  
         </div>
-    </div>
-    <!-- enviar pedido -->
-    </br>
-    </br>
-    <div class="container">
-        <div class="row text-center">
-            <div class="col-sm-3"></div>
-            <div class="col-sm-3"><button id="btn-enviar-pedido" class="btn button">Enviar pedido</button></div>
-            <div class="col-sm-3"><button onclick="limpar_carrinho();" type="button" id="btn-enviar-pedido" class="btn button">Limpar carrinho</button></div>
-            </ul>
-            <div class="col-sm-3"></div>
-        </div>
-    </div>
+        
+        <!-- Container -->
+     </section>
+    <!--Feature-area/-->
 
-    <!-- enviar pedido -->
 
+    <div class="line container"></div>
+  
 
     <!-- dúvidas -->
     <section class="gray-bg section-padding" id="faq-page">
@@ -175,7 +232,7 @@
             <div class="row">
                 <div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center">
                     <div class="page-title">
-                        <h2>Como eu faço as compras?</h2>
+                        <h2>Como isso funciona?</h2>
                         <p>Contrato, orçamento, formas de pagamento, entre outras dúvidas frequentes</p>
                     </div>
                 </div>
@@ -188,7 +245,8 @@
                                 <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="true">Como eu faço para contratar seu serviço?</a>
                             </h4>
                             <div id="collapse1" class="panel-collapse collapse in">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodas temporo incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrd exercitation ullamco laboris nisi ut aliquip ex comodo consequat. Duis aute dolor in reprehenderit.</p>
+                                <p>Primeiro é necessário adicionar ao carrinho os serviços que você precisa. Depois 
+                                é só enviar sua proposta pra mim. Após isso, pode ficar tranquilo, que eu entro em contato com você!</p>
                             </div>
                         </div>
                         <div class="panel">
@@ -221,7 +279,6 @@
         </div>
     </section>
     <!-- dpuvidas -->
-   
 
     <!-- contato -->
     <footer class="footer-area relative sky-bg footer-color" id="contact-page ">
@@ -254,6 +311,7 @@
                                         <img src="images/phone-arrow.png" alt="">
                                     </div>
                                     <p class="color-fix"><strong>Telefone: </strong>+55 (81) 99635-4295
+                                        <!-- <a href="callto:8801812726495">+55 (81) 99635-4295</a> <br /> -->
                                     </p>
                                 </div>
                             </address>
@@ -265,6 +323,7 @@
                                         <img src="images/mail-arrow.png" alt="">
                                     </div>
                                     <p class="color-fix"><strong>E-mail: </strong>arthurpedroweb@gmail.com
+                                        <!-- <a href="mailto:youremail@example.com">arthurpedroweb@gmail.com</a> <br /> -->
                                     </p>
                                 </div>
                             </address>
@@ -303,6 +362,7 @@
     <!-- contato -->
 
     <!--Vendor-JS-->
+    
     <script src="js/vendor/jquery-1.12.4.min.js"></script>
     <script src="js/vendor/bootstrap.min.js"></script>
     <script src="js/add_item.js"></script>
