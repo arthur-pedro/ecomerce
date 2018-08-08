@@ -50,8 +50,8 @@
 
 	$server = "127.0.0.1";
 	$usuario = "root";
-	$senha = "root";
-	$database = "ecomerce";
+	$senha = "";
+	$database = "servicos";
 
 	$conn = mysqli_connect($server, $usuario, $senha, $database);
 

@@ -1,16 +1,3 @@
-
-<?php  
-    
-    session_start();
-
-    
-    require("php/myFunctions.php");
-
-    if(!isset($_SESSION['qtd_produtos'])){
-        $_SESSION['qtd_produtos'] = 0;
-    }
-    
-?>
 <!doctype html>
 <html class="no-js" lang="zxx">
 
@@ -43,7 +30,7 @@
 </head>
 
 <body data-spy="scroll" data-target="#primary-menu">
-<div class="container-flui"></div>
+<div class="container-fluid"></div>
     <div class="preloader">
         <div class="sk-folding-cube">
             <div class="sk-cube1 sk-cube"></div>
@@ -54,7 +41,7 @@
     </div>
     <!--Mainmenu-area-->
     <div class="mainmenu-area" data-spy="affix" data-offset-top="100">
-        <div class="container">
+        <div class="container-fluid">
             <!--Logo-->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#primary-menu">
@@ -68,147 +55,182 @@
             </div>
             <!--Logo/-->
             <nav class="collapse navbar-collapse" id="primary-menu">
+                <div class="navbar-header">
+                </div>
                 <ul class="nav navbar-nav navbar-right">
-                    <li ><a href="index.php">Voltar às compras</a></li>
-                    <li><a href="#faq-page">Como fazer compras</a></li>
-                    <li class="active"><a href="#"><span class="glyphicon glyphicon-shopping-cart"> R$ <?php echo calcula_preco().' '; ?>(<span class="qtd_produtos_menu"><?php echo $_SESSION['qtd_produtos'];?></span> itens)</span></a></li>
+                    <li class="active"><a href="#home-page">Home</a></li>
+                    <li><a href="#service-page">Serviços</a></li>
+                    <li><a href="#faq-page">Dúvidas</a></li>
+                    <li><a href="#contact-page">Contato</a></li>
+                    <li><a href="carrinho.html"><span class="glyphicon glyphicon-shopping-cart"> R$0.00 (0 itens)</span></a></li>
                 </ul>
             </nav>
         </div>
     </div>
     <!--Mainmenu-area/-->
 
-   
-    <!--Mainmenu-area/-->
-
-    <header class="header-color" id="home-page">
+    <header class="price-area section-padding" id="home-page">
+        <div class="">
+             
+        </div>
         <div class="container" style="padding-top: 200px; padding-bottom: 50px;">
             <div class="row">
                 <div class="col-xs-12 col-md-7 header-text page-title">
-                    <h2 class="color-fix">Meus itens</h2>
-                    <p class="color-fix">Itens no carrinho podem ser removidos clicando no botão "remover"</p>
+                    <h2 class="color-fix">It’s all about Promoting your Business</h2>
+                    <p class="color-fix">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero ex inventore vel error quibusdam animi fugiat, doloribus dolores consectetur nulla deleniti sint blanditiis quod debitis quis vitae officiis tempora numquam.</p>
                     
                 </div>
             </div>
         </div>
     </header>
+    
 
+    <!--Feature-area-->
+    <section class="gray-bg section-padding" id="service-page">
+        <div class="container">
+            <!-- <div class="row"> -->
+                <h2 class="text-center" style="text-transform: uppercase;">Filtrar categoria</h2>
+                </br>               
+                <ul class="nav nav-tabs">
+                    <li class="active"><a data-toggle="tab" href="#menu1">Design</a></li>
+                    <li><a data-toggle="tab" href="#menu2">Web Development</a></li>
+                </ul>
+                </br>
+                </br>
 
-    <!-- Carrinho -->
-    </br>
-    </br>
-    <div class="container">
-        <div class="row add-item">
-
-            <div class="meu-item" id="div-remove"></div>
-                <?php
-
-                    require("php/conexao_mysql.php");
-                    // verificação
-                    if(isset($_SESSION['carrinho'])){
-
-                        // echo var_dump($query);
-
-                        // echo var_dump($teste);
-
-                        foreach ($_SESSION['query_carrinho'] as $key) {
-                            $result = $conn->query($key);
-
-                            while ($row = $result->fetch_assoc()) {
-                                // printf ("%s (%s) (%s)\n", $row["nome"], $row["preco"], $row["descricao"]);
-
-                                // $_SESSION['total_preco'] = $_SESSION['total_preco'] + $row["preco"];
-
-                                // inicio do html
-                                ?>
-                                <div class="col-md-12">
-                                    <div class="box">
+                <div class="tab-content">
+                    <div id="menu1" class="tab-pane fade in active">
+                      
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 col-lg-4 banner-text">
+                                <div class="box">
                                     <div class="box-icon">
                                         <img src="images/service-icon-1.png" alt="">
                                     </div>
-                                        <h3 class=""><?php echo $row["nome"]; ?></h3>
-                                        <h5>R$ <?php echo $row["preco"]; ?></h5>
-                                        <p><?php echo $row["descricao"]; ?></p>
-                                        <button id="btn-remover" class="btn button" data-toggle="modal" data-target="#remove">Remover</button>
-                                    </div>
+                                    <h3 class="">Ícones & logotipos</h3>
+                                    <hr>
+                                    <h5>preço: R$200</h5>
+                                    <p>Criação de logotipo</p>
+                                    <hr>
+                                    <button class="btn button" data-toggle="modal" data-target="#buy">Escolher!</button>
                                 </div>
-                                <?php
-                                // fim do html
-                            }
-                        }
-                    }else{
-                        ?> 
-
-                        <div class="col-md-12">
-                            <div class="box">
-                                <h3 class="">Carrinho vazio</h3>
-                                <p>Voltar para página inicial para continuar comprando</p>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-lg-4 banner-text">
+                                <div class="box">
+                                    <div class="box-icon">
+                                        <img src="images/service-icon-1.png" alt="">
+                                    </div>
+                                    <span class="price-info"><span class="ti-crown"></span></span>
+                                    <h3 class="">Ícones & logotipos</h3>
+                                     <hr>
+                                    <h5>preço: R$200</h5>
+                                    <p>Criação de logotipo</p>
+                                     <hr>
+                                    <button class="btn button" data-toggle="modal" data-target="#buy">Escolher!</button>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-lg-4 banner-text">
+                                <div class="box">
+                                    <div class="box-icon">
+                                        <img src="images/service-icon-1.png" alt="">
+                                    </div>
+                                    <h3 class="">Ícones & logotipos</h3>
+                                     <hr>
+                                    <h5>preço: R$200</h5>
+                                    <p>Criação de logotipo</p>
+                                     <hr>
+                                    <button class="btn button" data-toggle="modal" data-target="#buy">Escolher!</button>
+                                </div>
                             </div>
                         </div>
 
-                        <?php 
-                    }
-                ?>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 col-lg-4 banner-text">
+                                <div class="box">
+                                    <div class="box-icon">
+                                        <img src="images/service-icon-1.png" alt="">
+                                    </div>
+                                    <h3 class="">Ícones & logotipos</h3>
+                                     <hr>
+                                    <h5>preço: R$200</h5>
+                                    <p>Criação de logotipo</p>
+                                     <hr>
+                                    <button class="btn button" data-toggle="modal" data-target="#buy">Escolher!</button>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-lg-4 banner-text">
+                                <div class="box">
+                                    <div class="box-icon">
+                                        <img src="images/service-icon-1.png" alt="">
+                                    </div>
+                                    <h3 class="">Ícones & logotipos</h3>
+                                     <hr>
+                                    <h5>preço: R$200</h5>
+                                    <p>Criação de logotipo</p>
+                                     <hr>
+                                    <button class="btn button" data-toggle="modal" data-target="#buy">Escolher!</button>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-lg-4 banner-text">
+                                <div class="box">
+                                    <div class="box-icon">
+                                        <img src="images/service-icon-1.png" alt="">
+                                    </div>
+                                    <h3 class="">Ícones & logotipos</h3>
+                                     <hr>
+                                    <h5>preço: R$200</h5>
+                                    <p>Criação de logotipo</p>
+                                     <hr>
+                                    <button class="btn button" data-toggle="modal" data-target="#buy">Escolher!</button>
+                                </div>
+                            </div>
+                        </div>
 
-        </div>
-    </div>
-    <!-- enviar pedido -->
-    </br>
-    </br>
-    <div class="container">
-        <div class="row text-center">
-            <div class="col-sm-3"></div>
-            <div class="col-sm-3"><button onclick="enviar_email();" id="btn-enviar-pedido" class="btn button" data-toggle="modal" data-target="#enviar_proposta">Enviar pedido</button></div>
-            <div class="col-sm-3"><button onclick="limpar_carrinho();" type="button" id="btn-enviar-pedido" class="btn button">Limpar carrinho</button></div>
-            </ul>
-            <div class="col-sm-3"></div>
-        </div>
-    </div>
-    <!-- enviar pedido -->
+                        
+                    </div>
+                    <!-- modal de compras -->
 
-    <!-- modal de compras -->
-    <div class="modal fade" id="remove" role="dialog" style="padding-top: 100px;">
-        <div class="modal-dialog modal-sm">
-            <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                  <h4 class="modal-title">Item removido do carrinho!</h4>
-                </div>
-                <div class="modal-body">
-                  <p>Fechar esta janela para continuar comprando.</p>
-                </div>
-                <div class="modal-footer">
-                  <button onclick="" type="button" class="btn button" data-dismiss="modal">Continuar comprando</button>
-                </div>
+                    <div class="modal fade" id="buy" role="dialog" style="padding-top: 100px;">
+                        <div class="modal-dialog modal-sm">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                  <h4 class="modal-title">Item adicionado no carrinho!</h4>
+                                </div>
+                                <div class="modal-body">
+                                  <p>Fechar esta janela para continuar comprando.</p>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn button" data-dismiss="modal">Continuar comprando</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="menu2" class="tab-pane fade">
+                      
+                        <!-- SERVIÇOES DE WEB DEVELOPER -->
+                        <h1>Em Manutenção...</h1>
+
+                    </div>   
+                </div>  
+            <!-- </div> -->
+        </div>
+    </section>
+    <!--Feature-area/-->
+    <div class="line container"></div>
+    <!-- <img class="line" src="images/divisoria.png"> -->
+<!-- 
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+
+                
             </div>
         </div>
-    </div>
-    <!-- modal de compras -->
+    </div> -->
 
-    <!-- modal de enviar carrinho -->
-    <div class="modal fade" id="enviar_proposta" role="dialog" style="padding-top: 100px;">
-        <div class="modal-dialog modal-sm">
-            <div class="modal-content">
-                <div class="modal-header">
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                  <h4 style="text-align: center;" class="modal-title">FORMA DE PAGAMENTO</h4>
-                </div>
-                <div class="modal-body">
-                    <h2 style="text-align: center;"> Total a pagar: </h2><h1 style="text-align: center;">R$ <?php echo calcula_preco(); ?></h1>
-                  
-                    <input type="radio" name="opc" value="cartao"> Cartão<br>
-                    <input type="radio" name="opc" value="picpay"> PicPay<br>
-                    <input type="radio" name="opc" value="boleto" checked> Boleto<br> 
-                    
-                  
-                </div>
-                <div class="modal-footer">
-                  <button onclick="" type="button" class="btn button" data-dismiss="modal">Continuar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- modal de enviar carrinho -->
 
     <!-- dúvidas -->
     <section class="gray-bg section-padding" id="faq-page">
@@ -216,7 +238,7 @@
             <div class="row">
                 <div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center">
                     <div class="page-title">
-                        <h2>Como eu faço as compras?</h2>
+                        <h2>Como isso funciona?</h2>
                         <p>Contrato, orçamento, formas de pagamento, entre outras dúvidas frequentes</p>
                     </div>
                 </div>
@@ -229,7 +251,8 @@
                                 <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="true">Como eu faço para contratar seu serviço?</a>
                             </h4>
                             <div id="collapse1" class="panel-collapse collapse in">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodas temporo incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrd exercitation ullamco laboris nisi ut aliquip ex comodo consequat. Duis aute dolor in reprehenderit.</p>
+                                <p>Primeiro é necessário adicionar ao carrinho os serviços que você precisa. Depois 
+                                é só enviar sua proposta pra mim. Após isso, pode ficar tranquilo, que eu entro em contato com você!</p>
                             </div>
                         </div>
                         <div class="panel">
@@ -262,7 +285,6 @@
         </div>
     </section>
     <!-- dpuvidas -->
-   
 
     <!-- contato -->
     <footer class="footer-area relative sky-bg footer-color" id="contact-page ">
@@ -295,6 +317,7 @@
                                         <img src="images/phone-arrow.png" alt="">
                                     </div>
                                     <p class="color-fix"><strong>Telefone: </strong>+55 (81) 99635-4295
+                                        <!-- <a href="callto:8801812726495">+55 (81) 99635-4295</a> <br /> -->
                                     </p>
                                 </div>
                             </address>
@@ -306,6 +329,7 @@
                                         <img src="images/mail-arrow.png" alt="">
                                     </div>
                                     <p class="color-fix"><strong>E-mail: </strong>arthurpedroweb@gmail.com
+                                        <!-- <a href="mailto:youremail@example.com">arthurpedroweb@gmail.com</a> <br /> -->
                                     </p>
                                 </div>
                             </address>
@@ -321,8 +345,8 @@
                     <div class="col-xs-12 col-sm-12 text-center">
                         <ul class="social-menu">
                             <li><a href="#"><i class="ti-facebook"></i></a></li>
-                            <li><a href="#"><i class="ti-pinterest"></i></a></li>
-                            <li><a href="#"><i class="ti-instagram"></i></a></li>
+                            <li><a href="#"><i class="ti-twitter"></i></a></li>
+                            <li><a href="#"><i class="ti-google"></i></a></li>
                             <li><a href="#"><i class="ti-linkedin"></i></a></li>
                             <li><a href="https://github.com/arthur-pedro"><i class="ti-github"></i></a></li>
                         </ul>
@@ -346,7 +370,6 @@
     <!--Vendor-JS-->
     <script src="js/vendor/jquery-1.12.4.min.js"></script>
     <script src="js/vendor/bootstrap.min.js"></script>
-    <script src="js/add_item.js"></script>
     <!--Plugin-JS-->
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/contact-form.js"></script>
