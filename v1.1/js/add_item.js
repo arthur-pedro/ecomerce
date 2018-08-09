@@ -1,4 +1,9 @@
 
+function att_pagina(){
+	location.reload();
+}
+
+// AJAX
 
 function add_carrinho(produto){
 	// alert("ok");
@@ -19,9 +24,32 @@ function add_carrinho(produto){
 	}
 }
 
-function enviar_email(){
 
+function enviar_email(){
+	$.ajax({
+		url: "php/send_email.php",
+		type: "post",
+		beforeSend: function(){
+		
+        	$('#modal-title').html('Enviando email...');
+        	$('#notificacao').html('<img src="	images/enviando.gif">');
+        },
+       success: function(){
+           
+           $("#notificacao").html("Seu formulário foi enviado com sucesso! \n Logo farei contato :)");
+           // $("#titnotif").html("Logo farei contato :)");
+           // $("#notificacao").addClass("boa");
+           $("#notificacao").fadeIn("slow");
+           
+        setTimeout(function(){
+            $("#notificacao").fadeOut("slow");
+        }, 3000);
+        $('#modal-title').html('Obrigado :D');
+       },
+
+	});
 }
+
 
 function limpar_carrinho(){
 	
@@ -33,6 +61,3 @@ function limpar_carrinho(){
 	});
 }
 
-function att_pagina(){
-	location.reload();
-}

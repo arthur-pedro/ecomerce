@@ -48,10 +48,10 @@
 
 		
 
-	$server = "sql154.main-hosting.eu";
-	$usuario = "u816138972_pedro";
-	$senha = "1772004516Ap.";
-	$database = "u816138972_ecom";
+	$server = "127.0.0.1";
+	$usuario = "root";
+	$senha = "";
+	$database = "servicos";
 
 	$conn = mysqli_connect($server, $usuario, $senha, $database);
 

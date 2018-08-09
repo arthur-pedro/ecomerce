@@ -158,7 +158,7 @@
     <div class="container">
         <div class="row text-center">
             <div class="col-sm-3"></div>
-            <div class="col-sm-3"><button onclick="enviar_email();" id="btn-enviar-pedido" class="btn button" data-toggle="modal" data-target="#enviar_proposta">Enviar pedido</button></div>
+            <div class="col-sm-3"><button id="btn-enviar-pedido" class="btn button" data-toggle="modal" data-target="#enviar_proposta">Enviar pedido</button></div>
             <div class="col-sm-3"><button onclick="limpar_carrinho();" type="button" id="btn-enviar-pedido" class="btn button">Limpar carrinho</button></div>
             </ul>
             <div class="col-sm-3"></div>
@@ -191,19 +191,29 @@
             <div class="modal-content">
                 <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal">&times;</button>
-                  <h4 style="text-align: center;" class="modal-title">FORMA DE PAGAMENTO</h4>
+                  <h4 style="text-align: center;" id="modal-title" class="modal-title">Me envie sua proposta por e-mail</h4>
                 </div>
-                <div class="modal-body">
+                <div id="notificacao" class="modal-body">
+                    
+                    <h2 id="titnotif">
+                    </h2>
+                    <p id="txtnotif"></p>
+
                     <h2 style="text-align: center;"> Total a pagar: </h2><h1 style="text-align: center;">R$ <?php echo calcula_preco(); ?></h1>
                   
-                    <input type="radio" name="opc" value="cartao"> Cartão<br>
-                    <input type="radio" name="opc" value="picpay"> PicPay<br>
-                    <input type="radio" name="opc" value="boleto" checked> Boleto<br> 
-                    
-                  
+                    <form method="post">
+                        <div class="form-group">
+                        <label for="nome">Nome</label>
+                        <input type="text" name="nome" placeholder="digite seu nome..." class="form-control" required=""><br>
+                        <label for="email">Email</label>
+                        <input type="text" name="email" placeholder="digite seu email..." class="form-control" required><br>
+                        <button type="button" onclick="enviar_email();" id="btn-enviar-modal">Enviar</button>       
+                        </div> 
+                    </form>
                 </div>
+                    
                 <div class="modal-footer">
-                  <button onclick="" type="button" class="btn button" data-dismiss="modal">Continuar</button>
+                  <button onclick="" type="button" class="btn button" data-dismiss="modal">Fechar</button>
                 </div>
             </div>
         </div>
