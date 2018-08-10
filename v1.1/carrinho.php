@@ -62,7 +62,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="#" class="navbar-brand logo" style="">
+                <a href="index.php" class="navbar-brand logo" style="">
                     <h2>creative lab</h2>
                 </a>
             </div>
@@ -82,7 +82,7 @@
     <!--Mainmenu-area/-->
 
     <header class="header-color" id="home-page">
-        <div class="container" style="padding-top: 200px; padding-bottom: 50px;">
+        <div class="container" style="padding-top: 170px; padding-bottom: 50px;">
             <div class="row">
                 <div class="col-xs-12 col-md-7 header-text page-title">
                     <h2 class="color-fix">Meus itens</h2>
@@ -104,24 +104,24 @@
                 <?php
 
                     require("php/conexao_mysql.php");
-                    // verificação
+                    // CHECK
                     if(isset($_SESSION['carrinho'])){
-
-                        // echo var_dump($query);
-
-                        // echo var_dump($teste);
 
                         foreach ($_SESSION['query_carrinho'] as $key) {
                             $result = $conn->query($key);
-
+                            
                             while ($row = $result->fetch_assoc()) {
-                                // printf ("%s (%s) (%s)\n", $row["nome"], $row["preco"], $row["descricao"]);
+                                // NÃO INSERE NO ARRAY DE ITENS SE O ITEM JÁ EXISTIR
+                                if(!in_array($row['nome'], $_SESSION['array_item_carrinho'])){
 
-                                // $_SESSION['total_preco'] = $_SESSION['total_preco'] + $row["preco"];
+                                    $_SESSION['array_item_carrinho'][] =  $row['nome'];
+
+                                }
 
                                 // inicio do html
                                 ?>
-                                <div class="col-md-12">
+                                
+                                <div class="col-md-6">
                                     <div class="box">
                                     <div class="box-icon">
                                         <img src="images/service-icon-1.png" alt="">
@@ -129,12 +129,14 @@
                                         <h3 class=""><?php echo $row["nome"]; ?></h3>
                                         <h5>R$ <?php echo $row["preco"]; ?></h5>
                                         <p><?php echo $row["descricao"]; ?></p>
-                                        <button id="btn-remover" class="btn button" data-toggle="modal" data-target="#remove">Remover</button>
+                                        <button onclick="remove_item_carrinho('<?php echo $row["nome"]; ?>');" id="btn-remover" name="btn_remove_item" class="btn button" data-toggle="modal" data-target="#remove">Remover</button>
                                     </div>
                                 </div>
+                                
                                 <?php
                                 // fim do html
                             }
+
                         }
                     }else{
                         ?> 
@@ -187,7 +189,7 @@
 
     <!-- modal de enviar carrinho -->
     <div class="modal fade" id="enviar_proposta" role="dialog" style="padding-top: 100px;">
-        <div class="modal-dialog modal-sm" style="width: 30%;">
+        <div class="modal-dialog modal-md" ">
             <div class="modal-content">
                 <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -195,42 +197,51 @@
                 </div>
                 <div id="notificacao" class="modal-body">
                     
-                    <h2 id="titnotif">
-                    </h2>
+                    <h2 id="titnotif"></h2>
                     <p id="txtnotif"></p>
 
                     <h2 style="text-align: center;"> Total a pagar: </h2><h1 style="text-align: center;">R$ <?php echo calcula_preco(); ?></h1>
                   
-                    <form class="row" method="post">
-                        <div class="col-sm-6">
+                    <form method="post" id="form-enviar-pedido">
+                        <div class="form-group">
+                            <div class="row">
+                            <div class="col-sm-6">
+                                
+                                <label for="nome">Nome</label><br>
+                                <input class="form-control" type="text" name="nome" placeholder="digite seu nome..." required>
+                                       
+                            </div>
+                            <div class="col-sm-6">
+                                
+                                <label for="email">Email</label><br>
+                                <input class="form-control" type="text" name="email" placeholder="digite seu email..." class="form-control" required>
+                                
+                            </div>
+                            </div>
+                                
+                          
+                            <div class="row">
                             
-                            <label for="nome">Nome</label><br>
-                            <input class="form-control" type="text" name="nome" placeholder="digite seu nome..." required>
-                                   
+                            <div class="col-sm-12">
+                                <label for="mensagem">Informações adicionais</label><br>
+                                <textarea class="form-control" rows="5" name="mensagem" placeholder="Gostaria de perguntar ou informar algo?" required=""></textarea>
+                                
+                            </div>
+                                
+                            </div>
+                            <br>
+                            <div class="modal-footer">
+                                <button class="form-control button" type="submit" onclick="enviar_email();" id="btn-enviar-modal">Enviar</button>
+                            </div>
                         </div>
-                        <div class="col-sm-6">
-                            
-                            <label for="email">Email</label><br>
-                            <input class="form-control" type="text" name="email" placeholder="digite seu email..." class="form-control" required>
-                            
-                        </div> 
-                        <div class="col-sm-12">
-                            <label for="mensagem">Informações adicionais</label><br>
-                            <textarea class="form-control" rows="5" name="mensagem" placeholder="Gostaria de perguntar ou informar algo?" required=""></textarea>
-                            
-                        </div>
-                        <br>
-                        <div class="modal-footer">
-                            <button class="form-control button" type="button" onclick="enviar_email();" id="btn-enviar-modal">Enviar</button>
-                        </div>
+
                     </form>
-                    
                 </div>
                     
 
             </div>
         </div>
-    </div>
+    </div> 
     <!-- modal de enviar carrinho -->
 
     <!-- dúvidas -->
