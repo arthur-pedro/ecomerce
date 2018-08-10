@@ -187,7 +187,7 @@
 
     <!-- modal de enviar carrinho -->
     <div class="modal fade" id="enviar_proposta" role="dialog" style="padding-top: 100px;">
-        <div class="modal-dialog modal-sm">
+        <div class="modal-dialog modal-sm" style="width: 30%;">
             <div class="modal-content">
                 <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -201,20 +201,33 @@
 
                     <h2 style="text-align: center;"> Total a pagar: </h2><h1 style="text-align: center;">R$ <?php echo calcula_preco(); ?></h1>
                   
-                    <form method="post">
-                        <div class="form-group">
-                        <label for="nome">Nome</label>
-                        <input type="text" name="nome" placeholder="digite seu nome..." class="form-control" required=""><br>
-                        <label for="email">Email</label>
-                        <input type="text" name="email" placeholder="digite seu email..." class="form-control" required><br>
-                        <button type="button" onclick="enviar_email();" id="btn-enviar-modal">Enviar</button>       
+                    <form class="row" method="post">
+                        <div class="col-sm-6">
+                            
+                            <label for="nome">Nome</label><br>
+                            <input class="form-control" type="text" name="nome" placeholder="digite seu nome..." required>
+                                   
+                        </div>
+                        <div class="col-sm-6">
+                            
+                            <label for="email">Email</label><br>
+                            <input class="form-control" type="text" name="email" placeholder="digite seu email..." class="form-control" required>
+                            
                         </div> 
+                        <div class="col-sm-12">
+                            <label for="mensagem">Informações adicionais</label><br>
+                            <textarea class="form-control" rows="5" name="mensagem" placeholder="Gostaria de perguntar ou informar algo?" required=""></textarea>
+                            
+                        </div>
+                        <br>
+                        <div class="modal-footer">
+                            <button class="form-control button" type="button" onclick="enviar_email();" id="btn-enviar-modal">Enviar</button>
+                        </div>
                     </form>
+                    
                 </div>
                     
-                <div class="modal-footer">
-                  <button onclick="" type="button" class="btn button" data-dismiss="modal">Fechar</button>
-                </div>
+
             </div>
         </div>
     </div>
@@ -226,7 +239,7 @@
             <div class="row">
                 <div class="col-xs-12 col-sm-6 col-sm-offset-3 text-center">
                     <div class="page-title">
-                        <h2>Como eu faço as compras?</h2>
+                        <h2>Como isso funciona?</h2>
                         <p>Contrato, orçamento, formas de pagamento, entre outras dúvidas frequentes</p>
                     </div>
                 </div>
@@ -239,7 +252,8 @@
                                 <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="true">Como eu faço para contratar seu serviço?</a>
                             </h4>
                             <div id="collapse1" class="panel-collapse collapse in">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodas temporo incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrd exercitation ullamco laboris nisi ut aliquip ex comodo consequat. Duis aute dolor in reprehenderit.</p>
+                                <p>Primeiro é necessário adicionar ao carrinho, os serviços que você precisa. Depois 
+                                é só enviar sua proposta pra mim. Após isso, pode ficar tranquilo, que eu entro em contato com você!</p>
                             </div>
                         </div>
                         <div class="panel">
@@ -247,15 +261,15 @@
                                 <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Qual a garantia que eu tenho que o serviço vai ser entregue e no prazo correto?</a>
                             </h4>
                             <div id="collapse2" class="panel-collapse collapse">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodas temporo incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrd exercitation ullamco laboris nisi ut aliquip ex comodo consequat. Duis aute dolor in reprehenderit.</p>
+                                <p>Assim que eu receber sua proposta, te mandarei uma resposta com o prazo de <b><i>entrega</i></b> do projeto. Nossa equipe conta com profissionais qualificados para garantir a entrega no prazo conbinado, ou devolvemos o seu dinheiro.</p>
                             </div>
                         </div>
                         <div class="panel">
                             <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Como funciona o pagamento e a entrega do produto?</a>
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Como funciona o pagamento e <b><i>entrega</i></b> do produto finalizado?</a>
                             </h4>
                             <div id="collapse3" class="panel-collapse collapse">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodas temporo incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrd exercitation ullamco laboris nisi ut aliquip ex comodo consequat. Duis aute dolor in reprehenderit.</p>
+                                <p>Com um prazo de entrega e orçamento definido, a primeira parcela é paga, referente a metado do valo total. Ao longo do projeto, entregas periódicas serão feitas para você analizar se estamos seguindo pelo caminho certo! Após a conclusão e aprovação do serviço, a segunda metado é paga e entregamos o produto pra você :D</p>
                             </div>
                         </div>
                         <div class="panel">
@@ -263,7 +277,7 @@
                                 <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">Quem são vocês?</a>
                             </h4>
                             <div id="collapse4" class="panel-collapse collapse">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodas temporo incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrd exercitation ullamco laboris nisi ut aliquip ex comodo consequat. Duis aute dolor in reprehenderit.</p>
+                                <p>A creativeLab se trata de uma parceria entre designs, web designs, e desenvolvedores especializados com a finalidade de idealizar e desenvolver projetos freelancers de forma rápida, eficiente, e de baixo custo.</p>
                             </div>
                         </div>
                     </div>
@@ -272,7 +286,7 @@
         </div>
     </section>
     <!-- dpuvidas -->
-   
+
 
     <!-- contato -->
     <footer class="footer-area relative sky-bg footer-color" id="contact-page ">

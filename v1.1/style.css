@@ -320,6 +320,7 @@ preloader
     /*margin-bottom: 0;*/
 }
 
+
 .mainmenu-area #primary-menu > ul > li > a {
     background: none;
     padding: 30px 15px;
@@ -504,7 +505,7 @@ preloader
 
 #btn-enviar-pedido{
 
-    padding: 20px 50px;
+    
     margin-bottom: 20px;
     font-size: 20px;
     background-color: #454445;
@@ -515,7 +516,7 @@ preloader
 
     background-color: #604360;
     color: #ffffff;
-    padding: 20px;
+    
 }
 
 #btn-remover{
@@ -528,6 +529,26 @@ preloader
 
     background-color: #b91010b3;
     color: #ffffff;
+
+}
+
+#btn-portfolio{
+    color: #52428d;
+    background-color: #ffffff;
+    padding: 12px 40px !important;
+    display: inline-block;
+    padding: 16px 40px;
+    border-radius: 50px;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    border: none;
+    -webkit-box-shadow: 2px 5px 20px -5px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 5px 20px -5px rgba(0, 0, 0, 0.1);
+}
+
+#btn-portfolio:hover{
+    color: #ffffff;
+    background-color: #52428d;
 }
 
 .line{

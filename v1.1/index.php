@@ -88,7 +88,7 @@
                 <div class="col-xs-12 col-md-7 header-text page-title">
                     <h2 class="color-fix">It’s all about Promoting your Business</h2>
                     <p class="color-fix">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero ex inventore vel error quibusdam animi fugiat, doloribus dolores consectetur nulla deleniti sint blanditiis quod debitis quis vitae officiis tempora numquam.</p>
-                    
+                    <button id="btn-portfolio" class="btn">Conheça nosso portfólio</button>
                 </div>
             </div>
         </div>
@@ -124,10 +124,10 @@
                                     <div id="item_1">
                                         <h3>Cartão Visita</h3>
                                         <hr>
-                                        <h5>preço: R$ <span>150</span></h5>
+                                        <h5>preço: R$ <span>180</span></h5>
                                         <p>Criação de cartão visita</p>
                                         <hr>
-                                        <button type="button" onclick="add_carrinho('Cartão Visita');" name="product" value="[Cartão Visita,150]" class="btn button" data-toggle="modal" data-target="#buy">Escolher!</button>   
+                                        <button type="button" onclick="add_carrinho('Cartão Visita');" name="product" value="Cartão Visita" class="btn button" data-toggle="modal" data-target="#buy">Escolher!</button>   
                                     </div> 
                                 </div>
                             </div>
@@ -160,7 +160,7 @@
                                         <h5>preço: R$ <span>130</span></h5>
                                         <p>Criação de teste</p>
                                         <hr>
-                                        <button type="button" onclick="add_carrinho('Vetorização de imagens');" name="product" value="Vetorização de imagens" class="btn button" data-toggle="modal" data-target="#buy">Escolher!</button>       
+                                        <button type="button" onclick="add_carrinho('Vetorização');" name="product" value="Vetorização de imagens" class="btn button" data-toggle="modal" data-target="#buy">Escolher!</button>       
                                     </div>
                                     
                                 </div>
@@ -176,7 +176,7 @@
                                             <!-- <input style="display:none" type="text" value="teste" name="teste"> -->
                                             <hr>
                                             <h5>preço: R$ <span>130</span></h5>
-                                            <p>ilustrações avulsas</p>
+                                            <p>Ilustrações avulsas</p>
                                             <hr>
                                             <button type="button" onclick="add_carrinho('Ilustração');" name="product" value="Ilustração" class="btn button" data-toggle="modal" data-target="#buy">Escolher!</button>       
                                         </div>
@@ -245,7 +245,7 @@
                                 <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="true">Como eu faço para contratar seu serviço?</a>
                             </h4>
                             <div id="collapse1" class="panel-collapse collapse in">
-                                <p>Primeiro é necessário adicionar ao carrinho os serviços que você precisa. Depois 
+                                <p>Primeiro é necessário adicionar ao carrinho, os serviços que você precisa. Depois 
                                 é só enviar sua proposta pra mim. Após isso, pode ficar tranquilo, que eu entro em contato com você!</p>
                             </div>
                         </div>
@@ -254,15 +254,15 @@
                                 <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Qual a garantia que eu tenho que o serviço vai ser entregue e no prazo correto?</a>
                             </h4>
                             <div id="collapse2" class="panel-collapse collapse">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodas temporo incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrd exercitation ullamco laboris nisi ut aliquip ex comodo consequat. Duis aute dolor in reprehenderit.</p>
+                                <p>Assim que eu receber sua proposta, te mandarei uma resposta com o prazo de <b><i>entrega</i></b> do projeto. Nossa equipe conta com profissionais qualificados para garantir a entrega no prazo conbinado, ou devolvemos o seu dinheiro.</p>
                             </div>
                         </div>
                         <div class="panel">
                             <h4 class="panel-title">
-                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Como funciona o pagamento e a entrega do produto?</a>
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Como funciona o pagamento e <b><i>entrega</i></b> do produto finalizado?</a>
                             </h4>
                             <div id="collapse3" class="panel-collapse collapse">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodas temporo incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrd exercitation ullamco laboris nisi ut aliquip ex comodo consequat. Duis aute dolor in reprehenderit.</p>
+                                <p>Com um prazo de entrega e orçamento definido, a primeira parcela é paga, referente a metado do valo total. Ao longo do projeto, entregas periódicas serão feitas para você analizar se estamos seguindo pelo caminho certo! Após a conclusão e aprovação do serviço, a segunda metado é paga e entregamos o produto pra você :D</p>
                             </div>
                         </div>
                         <div class="panel">
@@ -270,7 +270,7 @@
                                 <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">Quem são vocês?</a>
                             </h4>
                             <div id="collapse4" class="panel-collapse collapse">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodas temporo incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrd exercitation ullamco laboris nisi ut aliquip ex comodo consequat. Duis aute dolor in reprehenderit.</p>
+                                <p>A creativeLab se trata de uma parceria entre designs, web designs, e desenvolvedores especializados com a finalidade de idealizar e desenvolver projetos freelancers de forma rápida, eficiente, e de baixo custo.</p>
                             </div>
                         </div>
                     </div>
@@ -310,7 +310,7 @@
                                     <div class="side-icon">
                                         <img src="images/phone-arrow.png" alt="">
                                     </div>
-                                    <p class="color-fix"><strong>Telefone: </strong>+55 (81) 99635-4295
+                                    <p class="color-fix"><strong>Telefone: </strong>+55 81 99635-4295
                                         <!-- <a href="callto:8801812726495">+55 (81) 99635-4295</a> <br /> -->
                                     </p>
                                 </div>
@@ -338,10 +338,9 @@
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 text-center">
                         <ul class="social-menu">
-                            <li><a href="#"><i class="ti-facebook"></i></a></li>
-                            <li><a href="#"><i class="ti-pinterest"></i></a></li>
-                            <li><a href="#"><i class="ti-instagram"></i></a></li>
-                            <li><a href="#"><i class="ti-linkedin"></i></a></li>
+                            <li><a href="https://br.pinterest.com/arthurpedro_0/"><i class="ti-pinterest"></i></a></li>
+                            <li><a href="https://https://www.instagram.com/arthurpedro_0/"><i class="ti-instagram"></i></a></li>
+                            <li><a href="https://www.linkedin.com/in/arthur-pedro-473a14103/"><i class="ti-linkedin"></i></a></li>
                             <li><a href="https://github.com/arthur-pedro"><i class="ti-github"></i></a></li>
                         </ul>
                     </div>
@@ -353,7 +352,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12 col-md-12 text-center">
-                        <p style="padding-bottom: 20px;" class="color-fix">&copy;Copyright 2018 All right resurved.  This template is made with <i class="" aria-hidden="true"></i> by <a class="color-fix" href="https://colorlib.com">Colorlib</a></p>
+                        <p style="padding-bottom: 20px;" class="color-fix">&copy;Copyright 2018 All right reserved.  This template is made with <i class="" aria-hidden="true"></i> by <a class="color-fix" href="https://colorlib.com">Colorlib</a></p>
                     </div>
                 </div>
             </div>

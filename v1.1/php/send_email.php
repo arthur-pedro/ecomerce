@@ -2,7 +2,7 @@
 
 	$nome = $_POST['nome']; 
 	$email = $_POST['email'];
-	$message = "teste php mailer";
+	$mensagem = $_POST['mensagem'];
 
 	require_once("phpmailer/class.phpmailer.php");
 
@@ -19,7 +19,7 @@
 	    $mail->Port = 587;                                    // TCP port to connect to
 	    //Recipients
 	    $from = "arthurpedroweb@gmail.com";
-	    $mail->setFrom($from, 'Teste');
+	    $mail->setFrom($from, $nome);
 	    $mail->addAddress($from, $nome);     // Add a recipient
 	    /*//Attachments
 	    $mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
@@ -28,7 +28,7 @@
 	    //Content
 	    $mail->isHTML(true);                                  // Set email format to HTML
 	    $mail->Subject = $nome;
-	    $mail->Body    = 'Email enviado de '.$email.' para '.$from.'<br /><br />'.$message;
+	    $mail->Body    = 'Email enviado de '.$email.' para '.$from.'<br /><br />'.$mensagem;
 	    $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 	    $mail->send();
 	    echo 'Message has been sent';
