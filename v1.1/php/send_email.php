@@ -1,14 +1,34 @@
 <?php
 	
-	// session_start();
-	// require("php/myFunctions.php");
+	session_start();
 
+	require("conexao_mysql.php");
+	
+
+	// FROM
 	$nome = $_POST['nome']; 
 	$email = $_POST['email'];
 	$message = $_POST['mensagem'];
+	$itens_pedidos = implode(", ", $_SESSION['array_item_carrinho']);
+	$total_pagar = $_SESSION['teste'];
+	
+	// SQL
+	$tabela = "pedidos";
+	$campos = "";
+	$query_pedidos = "INSERT INTO $tabela (`id_pedido`, `nome_cliente`, `email_cliente`, `descricao_pedido`, `itens_pedido`, `total_pagar`) VALUES (NULL, '$nome', '$email', '$message', '$itens_pedidos', '$total_pagar')";
+	
+	if(isset($nome) && isset($email) && isset($message)){
+		$conn->query($query_pedidos);
+	}else{
+		echo "Carrinho vazio";
+	}
+	
 
-	// $valor = calcula_preco();
 
+
+
+
+	// PHP Mailer
 	require_once("phpmailer/class.phpmailer.php");
 
 	$mail = new PHPMailer();                              // Passing `true` enables exceptions

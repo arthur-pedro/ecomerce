@@ -301,11 +301,11 @@ preloader
 
 
 .price-area {
-    background: url('images/header.jpg') no-repeat scroll center center / cover
+    background: url('images/header_.jpg') no-repeat scroll center center / cover
 }
 
 .carrinho {
-    background: url('images/carrinho.jpg') no-repeat scroll center center / cover
+    background: url('images/carrinho.gif') no-repeat scroll center center / cover
 }
 
 .mainmenu-area .logo {
@@ -359,7 +359,7 @@ preloader
 }
 
 .mainmenu-area.affix {
-    background-color: #242b31e6;
+    background-color: #f15a5a;
 }
 
 .section-padding {
@@ -370,12 +370,12 @@ preloader
     background-color: #fff;
 }
 
-
+/*
 .header-color{
 
-    background: linear-gradient(to bottom, #3e90b7 50%, #ffffff 100%);
+    background: linear-gradient(to bottom, #3eb790 50%, #ffffff 100%);
 
-}
+}*/
 
 .footer-color{
 
@@ -387,6 +387,7 @@ preloader
 .header-text h2 {
     /*margin-bottom: 0px;*/
     font-size: 65px;
+    color: #30436e;
 }
 
 .header-text .button {
@@ -395,7 +396,7 @@ preloader
 
 .color-fix{
 
-    color: #fff;
+    color: #fff !important;
 }
 
 .footer-margin-fix{
@@ -432,7 +433,7 @@ preloader
     top: 20px;
     width: 36px;
     height: 36px;
-    background: #534b71;
+    background: #5ddf97;
     border-radius: 50%;
     -webkit-transition: 0.3s;
     transition: 0.3s;
@@ -479,7 +480,7 @@ preloader
     padding: 8px 30px;
     border-radius: 50px;
     color: #ffffff;
-    background-color: #52428d;
+    background-color: #5ddf97;
     -webkit-transition: 0.3s;
     transition: 0.3s;
     border: none;
@@ -532,8 +533,8 @@ preloader
 }
 
 #btn-portfolio{
-    color: #52428d;
-    background-color: #ffffff;
+    color: #ffffff ;
+    background-color: #5ddf97;
     padding: 12px 40px !important;
     display: inline-block;
     padding: 16px 40px;

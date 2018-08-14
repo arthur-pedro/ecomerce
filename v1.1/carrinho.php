@@ -6,9 +6,14 @@
     
     require("php/myFunctions.php");
 
+    // VALOR TOTAL DO CARRINHO (PREÇO)
+    $_SESSION['teste'] = calcula_preco();
+
     if(!isset($_SESSION['qtd_produtos'])){
         $_SESSION['qtd_produtos'] = 0;
     }
+
+
     
 ?>
 <!doctype html>
@@ -90,11 +95,11 @@
                             
                     <h2 id="" class="color-fix">Que tal pagar com PicPay?</h2>
                     <p class="color-fix">Pagando com PicPay você já tem R$10 de desconto!</p>
-                    <button href="http://www.picpay.com/convite?@MKF66F" id="btn-portfolio" class="btn"><a href="http://www.picpay.com/convite?@MKF66F">Baixar Agora!</a></button>
+                    <a href="http://www.picpay.com/convite?@MKF66F""><button id="btn-portfolio" class="btn">Baixar Agora!</button></a>
                                               
                 </div> 
                 <div id="header-position-fix" class="col-md-5 col-xs-12">
-                    <img width="1000px" class="img-fluid" src="images/buy.png">
+                    <!-- <img width="1000px" class="img-fluid" src="images/buy.png"> -->
                 </div> 
 
             </div>

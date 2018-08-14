@@ -69,8 +69,8 @@
             </div>
             <!--Logo/-->
             <nav class="collapse navbar-collapse" id="primary-menu">
-                <div class="navbar-header">
-                </div>
+                <!-- <div class="navbar-header">
+                </div> -->
                 <ul class="nav navbar-nav navbar-right">
                     <li class="active"><a href="#home-page">Home</a></li>
                     <li><a href="#service-page">Serviços</a></li>
@@ -86,9 +86,11 @@
         <div class="container" style="padding-top: 200px; padding-bottom: 50px;">
             <div class="row">
                 <div class="col-xs-12 col-md-7 header-text page-title">
-                    <h2 class="color-fix">It’s all about Promoting your Business</h2>
-                    <p class="color-fix">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero ex inventore vel error quibusdam animi fugiat, doloribus dolores consectetur nulla deleniti sint blanditiis quod debitis quis vitae officiis tempora numquam.</p>
-                    <button id="btn-portfolio" class="btn">Conheça nosso portfólio</button>
+                    <h2 class="">It’s all about Promoting your Business</h2>
+                    <p class="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero ex inventore vel error quibusdam animi fugiat, doloribus dolores consectetur nulla deleniti sint blanditiis quod debitis quis vitae officiis tempora numquam.<a href="https://www.vexels.com/vetores/previsualizar/73424/fundo-de-salpicos-coloridos-salpicos-de-tinta"> image | designed by Vexels</a></p>
+                    <a href="portfolio.html"><button id="btn-portfolio" class="btn">Conhecer portfólio!</button></a>
+                    <br>
+                    <br>
                 </div>
             </div>
         </div>
