@@ -28,7 +28,8 @@ function add_carrinho(produto){
 
 function enviar_email(){
 
-	jQuery('#form-enviar-pedido').submit(function(){
+
+		jQuery('#form-enviar-pedido').submit(function(){
 
 		var dados = jQuery(this).serialize();
 
@@ -39,7 +40,7 @@ function enviar_email(){
 			beforeSend: function(){
 			
 	        	$('#modal-title').html('Enviando email...');
-	        	$('#notificacao').html('<img style="text-align: center;" src="images/enviando.gif">');
+	        	$('#notificacao').html('<div class="row"><div class="col-md-4"></div><div class="col-md-4"><img width="250px" src="images/enviando.gif"></div><div class="col-md-4"></div></div>');
 
 	        },
 	       success: function(){
@@ -52,16 +53,21 @@ function enviar_email(){
 
 	        }, 10000);
 	        $('#modal-title').html("Obrigado :D");
+	        /*$('#modal-title').html('<div class="row"><div class="col-md-4"></div><div class="col-md-4"><img width="250px" src="images/picpay.jpeg"></div><div class="col-md-4"></div></div>');*/
 	       },
 
 		});
 	});
+	
 }
 
 
-function limpar_carrinho(){
+function limpar_carrinho(qtd_itens_carrinho){
 	
-	$.ajax({
+	if(qtd_itens_carrinho == 0){
+		alert('Carrinho vazio!');
+	}else{
+		$.ajax({
 		url: "php/limpar_carrinho.php",
 		beforeSend: function(){
 		
@@ -72,20 +78,22 @@ function limpar_carrinho(){
 			att_pagina();	
 		}
 	});
+	}
 }
 
 function remove_item_carrinho(item){
-
+	/*item = "Cartão visita";*/
 	$.ajax({
 		url: "php/remove_item_carrinho.php",
-		data: "btn_remove_item=" + item,
+		type: "post",
+		data: "btn_remove_item="+item,
 		beforeSend: function(){
 		
 			alert('beforeSend');
         	
         },
 		success: function(){
-			alert('teste');	
+			att_pagina()	
 		}
 	});
 // item = "teste";

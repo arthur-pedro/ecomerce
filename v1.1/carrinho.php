@@ -81,14 +81,22 @@
    
     <!--Mainmenu-area/-->
 
-    <header class="header-color" id="home-page">
+    <header class="header-color carrinho" id="home-page">
         <div class="container" style="padding-top: 170px; padding-bottom: 50px;">
             <div class="row">
-                <div class="col-xs-12 col-md-7 header-text page-title">
-                    <h2 class="color-fix">Meus itens</h2>
-                    <p class="color-fix">Itens no carrinho podem ser removidos clicando no botão "remover"</p>
-                    
-                </div>
+                <div class="col-xs-12 col-md-7 col-xs-12 header-text">
+                    <!-- <h2 class="color-fix">Carrinho</h2> -->
+                        
+                            
+                    <h2 id="" class="color-fix">Que tal pagar com PicPay?</h2>
+                    <p class="color-fix">Pagando com PicPay você já tem R$10 de desconto!</p>
+                    <button href="http://www.picpay.com/convite?@MKF66F" id="btn-portfolio" class="btn"><a href="http://www.picpay.com/convite?@MKF66F">Baixar Agora!</a></button>
+                                              
+                </div> 
+                <div id="header-position-fix" class="col-md-5 col-xs-12">
+                    <img width="1000px" class="img-fluid" src="images/buy.png">
+                </div> 
+
             </div>
         </div>
     </header>
@@ -161,7 +169,7 @@
         <div class="row text-center">
             <div class="col-sm-3"></div>
             <div class="col-sm-3"><button id="btn-enviar-pedido" class="btn button" data-toggle="modal" data-target="#enviar_proposta">Enviar pedido</button></div>
-            <div class="col-sm-3"><button onclick="limpar_carrinho();" type="button" id="btn-enviar-pedido" class="btn button">Limpar carrinho</button></div>
+            <div class="col-sm-3"><button onclick="limpar_carrinho('<?php echo $_SESSION["qtd_produtos"] ?>');" type="button" id="btn-enviar-pedido" class="btn button">Limpar carrinho</button></div>
             </ul>
             <div class="col-sm-3"></div>
         </div>
@@ -200,13 +208,13 @@
                     <h2 id="titnotif"></h2>
                     <p id="txtnotif"></p>
 
-                    <h2 style="text-align: center;"> Total a pagar: </h2><h1 style="text-align: center;">R$ <?php echo calcula_preco(); ?></h1>
-                  
+                    <h2 style="text-align: center;"> Valor do projeto: </h2><h1 style="text-align: center;">R$ <?php echo calcula_preco(); ?></h1>
+            
                     <form method="post" id="form-enviar-pedido">
                         <div class="form-group">
                             <div class="row">
                             <div class="col-sm-6">
-                                
+                               
                                 <label for="nome">Nome</label><br>
                                 <input class="form-control" type="text" name="nome" placeholder="digite seu nome..." required>
                                        

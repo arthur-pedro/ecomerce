@@ -373,8 +373,7 @@ preloader
 
 .header-color{
 
-    background: linear-gradient(to bottom, #534b71 0%, #534b71 100%);
-    /*padding-bottom: 200px;*/
+    background: linear-gradient(to bottom, #3e90b7 50%, #ffffff 100%);
 
 }
 
@@ -570,3 +569,5 @@ preloader
     padding-bottom: 20px;
 
 }
+
+

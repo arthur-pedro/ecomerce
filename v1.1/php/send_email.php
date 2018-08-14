@@ -16,14 +16,14 @@
 	    //Server settings
 	    $mail->SMTPDebug = 2;                                 // Enable verbose debug output
 	    $mail->isSMTP();                                      // Set mailer to use SMTP
-	    $mail->Host = 'mx1.hostinger.com.br';  // Specify main and backup SMTP servers
+	    $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
 	    $mail->SMTPAuth = true;                               // Enable SMTP authentication
-	    $mail->Username = 'servicos@creativelab.ga';                 // SMTP username
+	    $mail->Username = 'arthurpedroweb@gmail.com';                 // SMTP username
 	    $mail->Password = '1772004516Ap.';                           // SMTP password
 	    $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
 	    $mail->Port = 587;                                    // TCP port to connect to
 	    //Recipients
-	    $from = "servicos@creativelab.ga";
+	    $from = "arthurpedroweb@gmail.com";
 	    $mail->setFrom($from, $nome);
 	    $mail->addAddress($from, $nome);     // Add a recipient
 	    /*//Attachments
