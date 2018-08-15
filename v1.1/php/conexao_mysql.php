@@ -47,8 +47,8 @@
 	// print_r($row['nome']);
 
 		
-
 	$server = "sql154.main-hosting.eu";
+	// $server = "mysql.hostinger.com.br";
 	$usuario = "u816138972_pedro";
 	$senha = "1772004516Ap.";
 	$database = "u816138972_ecom";
