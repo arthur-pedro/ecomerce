@@ -1,7 +1,5 @@
 <?php
 	require("php/conexao_mysql.php");
-
-
 ?>
 
 <!DOCTYPE html>
@@ -43,11 +41,11 @@
 					<h2 class="centralizar">Bem-vindo de volta!</h2>
 					<br>
 					<!-- <h6>Efetuar o login para acessar painel de administração</h6> -->
-					<form method="post" id="form-login">
+					<form method="post" action="php/login_request.php" id="form-login">
 						<div class="form-group">
-						<input class="form-control myInput" type="text" name="email" placeholder="Usuário">
-						<input class="form-control fix-position" type="password" name="senha" placeholder="Senha">
-						<button onclick="login();" type="button" name="btn_login" class="button">Login</button>
+							<input class="form-control myInput" type="text" name="nome" placeholder="Usuário">
+							<input class="form-control fix-position" type="password" name="senha" placeholder="Senha">
+						<button   type="submit" name="btn_login" class="button" onclick="login();">Login</button>
 						</div>
 					</form>
 				</div>	

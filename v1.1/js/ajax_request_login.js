@@ -1,5 +1,5 @@
 function login(){
-	
+	/*alert("w");*/
 	jQuery("#form-login").submit(function(){
 		
 		var dados = jQuery(this).serialize();
@@ -9,13 +9,18 @@ function login(){
 			type: "post",
 			data: dados,
 			beforeSend: function(){
-			
-
+				
+				alert("beforeSend");
 	        },
 	       success: function(){
 	           
-	           alert("success!");
+	           alert("usuario logado");
 
+	       },
+
+	       error: function(){
+
+	       		alert("Nome ou senha incorretos!")
 	       }
 		});
 	});
