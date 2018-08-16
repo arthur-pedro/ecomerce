@@ -4,10 +4,7 @@ function att_pagina(){
 	$('html,body').scrollTop(0);
 }
 
-// AJAX
-
 function add_carrinho(produto){
-	// alert("ok");
 	
 	if(produto != null){
 
@@ -34,7 +31,7 @@ function enviar_email(){
 		var dados = jQuery(this).serialize();
 
 		$.ajax({
-			url: "php/send_email.php",
+			url: "php/enviar_pedido.php",
 			type: "post",
 			data: dados,
 			beforeSend: function(){
@@ -82,7 +79,7 @@ function limpar_carrinho(qtd_itens_carrinho){
 }
 
 function remove_item_carrinho(item){
-	/*item = "Cartão visita";*/
+
 	$.ajax({
 		url: "php/remove_item_carrinho.php",
 		type: "post",
@@ -96,7 +93,4 @@ function remove_item_carrinho(item){
 			att_pagina()	
 		}
 	});
-// item = "teste";
-// alert(item);
-
 }

@@ -363,10 +363,9 @@
     <!-- contato -->
 
     <!--Vendor-JS-->
-    
     <script src="js/vendor/jquery-1.12.4.min.js"></script>
     <script src="js/vendor/bootstrap.min.js"></script>
-    <script src="js/add_item.js"></script>
+    <script src="js/ajax_request_carrinho.js"></script>
     <!--Plugin-JS-->
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/contact-form.js"></script>
@@ -376,16 +375,6 @@
     <script src="js/wow.min.js"></script>
     <!--Main-active-JS-->
     <script src="js/main.js"></script>
-    <!-- <script>
-    $(document).ready(function(){
-      $("#myInput").on("keyup", function() {
-        var value = $(this).val().toLowerCase();
-        $("#myDIV *").filter(function() {
-          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-        });
-      });
-    });
-    </script> -->
 </body>
 
 </html>

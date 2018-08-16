@@ -38,16 +38,24 @@
 			</div>
 			<div class="col-md-4 col-lg-4 col-sm-4 col-xs-12">
 				<div class="box-login">
-					<h2 class="centralizar">Bem-vindo de volta!</h2>
-					<br>
 					<!-- <h6>Efetuar o login para acessar painel de administração</h6> -->
-					<form method="post" action="php/login_request.php" id="form-login">
-						<div class="form-group">
-							<input class="form-control myInput" type="text" name="nome" placeholder="Usuário">
-							<input class="form-control fix-position" type="password" name="senha" placeholder="Senha">
-						<button   type="submit" name="btn_login" class="button" onclick="login();">Login</button>
-						</div>
-					</form>
+					<div class="myPanel">
+				    	<h2 id="h2-text" class="centralizar">Bem-vindo de volta!</h2>
+						<br>
+				    	<!-- X------------------------------FORM LOGIN------------------------------X -->
+						<form method="post"  id="form-login">
+							<div class="form-group">
+								<input class="form-control myInput" type="text" name="nome" placeholder="Usuário">
+								<input class="form-control fix-position" type="password" name="senha" placeholder="Senha">
+							<input type="button" name="btn_form" value="btn_login" class="button" onclick="login();">
+							</div>
+						</form>
+
+						<!-- X------------------------------FORM LOGIN------------------------------X -->	
+					</div>
+					<h6 class="centralizar">Ainda não tem conta? <a href="#" onclick="cadastro();">clique aqui</a></h6>
+
+					
 				</div>	
 			</div>
 			<div class="col-md-2 col-lg-2 col-sm-2 col-xs-12"></div>

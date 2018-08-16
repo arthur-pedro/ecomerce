@@ -1,6 +1,5 @@
 <?php
 
-
 function calcula_preco(){
         
     require("conexao_mysql.php");

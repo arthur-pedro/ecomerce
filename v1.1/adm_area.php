@@ -1,7 +1,10 @@
 <?php
-	require("conexao_mysql.php");
 
-
+	session_start();
+	require("php/conexao_mysql.php");
+	if(!isset($_SESSION['usuario_logado'])){
+		header("Location: login.php");
+	}
 ?>
 
 <!DOCTYPE html>
@@ -28,10 +31,15 @@
 <body>
 
 <header>
-	<nav>
-		
-	</nav>
+	<div class="container-fluid">
+		<nav class="nav navbar">
+			<p>Olá <?php echo $_SESSION['usuario_logado']; ?></p>
+		</nav>	
+	</div>
+
+	
 </header>
+
 <section>
 	
 </section>
@@ -42,7 +50,7 @@
 
 <script src="js/vendor/jquery-1.12.4.min.js"></script>
 <script src="js/vendor/bootstrap.min.js"></script>
-<script src="js/add_item.js"></script>
+<script src="js/ajax_request_carrinho.js"></script>
 <!--Plugin-JS-->
 <script src="js/owl.carousel.min.js"></script>
 <script src="js/contact-form.js"></script>
