@@ -43,19 +43,18 @@
 				    	<h2 id="h2-text" class="centralizar">Bem-vindo de volta!</h2>
 						<br>
 				    	<!-- X------------------------------FORM LOGIN------------------------------X -->
-						<form method="post"  id="form-login">
-							<div class="form-group">
-								<input class="form-control myInput" type="text" name="nome" placeholder="Usuário">
-								<input class="form-control fix-position" type="password" name="senha" placeholder="Senha">
-							<input type="button" name="btn_form" value="btn_login" class="button" onclick="login();">
+						<!-- <form method="post"  id="form-login"> -->
+							<div id="form-login" class="form-group">
+								<input id="nome" class="form-control myInput" type="text" name="nome" placeholder="Usuário">
+								<input id="senha" class="form-control fix-position" type="password" name="senha" placeholder="Senha">
+							<button id="btn-form" type="button" name="btn_login" value="login" class="button" onclick="login();">Login</button>
 							</div>
-						</form>
+							<h6 class="centralizar">Ainda não tem conta? <a href="#" onclick="cadastro();">clique aqui</a></h6>
+							<div class="centralizar" id="display-message"></div>
+						<!-- </form> -->
 
 						<!-- X------------------------------FORM LOGIN------------------------------X -->	
-					</div>
-					<h6 class="centralizar">Ainda não tem conta? <a href="#" onclick="cadastro();">clique aqui</a></h6>
-
-					
+					</div>	
 				</div>	
 			</div>
 			<div class="col-md-2 col-lg-2 col-sm-2 col-xs-12"></div>
