@@ -18,7 +18,7 @@
 
 		}
 	else
-		echo 'btn-remove-item null (normal)';
+	echo 'btn-remove-item null (normal)';
 	
 	echo '<pre>';
 	/*echo var_dump($newArr);*/

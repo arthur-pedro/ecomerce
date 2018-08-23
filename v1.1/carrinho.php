@@ -3,8 +3,14 @@
     
     session_start();
 
+    require_once("php/myFunctions.php");
+    require("php/lib/conexao/conexao_mysql.php");
     
-    require("php/myFunctions.php");
+
+    $conexao = new MyDatabase();
+    $conn = $conexao->connect();
+
+    
 
     // VALOR TOTAL DO CARRINHO (PREÇO)
     $_SESSION['teste'] = calcula_preco();
@@ -116,7 +122,8 @@
             <div class="meu-item" id="div-remove"></div>
                 <?php
 
-                    require("php/conexao_mysql.php");
+                    
+                    
                     // CHECK
                     if(isset($_SESSION['carrinho'])){
 

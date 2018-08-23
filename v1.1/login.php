@@ -1,5 +1,9 @@
 <?php
-	require("php/conexao_mysql.php");
+	
+	require("php/lib/conexao/conexao_mysql.php");
+
+	$myDatabase = new MyDatabase();
+	$conn = $myDatabase->connect();
 ?>
 
 <!DOCTYPE html>
@@ -30,12 +34,7 @@
 <section>
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-md-6 col-lg-6 col-sm-6 col-xs-12">
-				<div class="box-login-1">
-					<!-- <h2 class="centralizar">teste</h2> -->
-					<img src="images/login.gif">
-				</div>	
-			</div>
+			<div class="col-md-4 col-lg-4 col-sm-4 col-xs-12"></div>
 			<div class="col-md-4 col-lg-4 col-sm-4 col-xs-12">
 				<div class="box-login">
 					<!-- <h6>Efetuar o login para acessar painel de administração</h6> -->
@@ -44,11 +43,15 @@
 						<br>
 				    	<!-- X------------------------------FORM LOGIN------------------------------X -->
 						<!-- <form method="post"  id="form-login"> -->
+							
 							<div id="form-login" class="form-group">
-								<input id="nome" class="form-control myInput" type="text" name="nome" placeholder="Usuário">
-								<input id="senha" class="form-control fix-position" type="password" name="senha" placeholder="Senha">
+								<div id="fade">
+									<input id="nome" class="form-control myInput" type="text" name="nome" placeholder="Usuário">
+									<input id="senha" class="form-control fix-position" type="password" name="senha" placeholder="Senha">
+								</div>
 							<button id="btn-form" type="button" name="btn_login" value="login" class="button" onclick="login();">Login</button>
-							</div>
+							</div>	
+							
 							<h6 class="centralizar">Ainda não tem conta? <a href="#" onclick="cadastro();">clique aqui</a></h6>
 							<div class="centralizar" id="display-message"></div>
 						<!-- </form> -->
@@ -57,8 +60,11 @@
 					</div>	
 				</div>	
 			</div>
-			<div class="col-md-2 col-lg-2 col-sm-2 col-xs-12"></div>
+			<div class="col-md-4 col-lg-4 col-sm-4 col-xs-12"></div>
 		</div>
+			
+
+	
 	</div>	
 </section>
 

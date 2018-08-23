@@ -37,7 +37,7 @@ function enviar_email(){
 			beforeSend: function(){
 			
 	        	$('#modal-title').html('Enviando email...');
-	        	$('#notificacao').html('<div class="row"><div class="col-md-4"></div><div class="col-md-4"><img width="250px" src="images/enviando.gif"></div><div class="col-md-4"></div></div>');
+	        	$('#notificacao').html('<div class="row"><div class="col-md-4"></div><div class="col-md-4"><img width="250px" src="images/loading.gif"></div><div class="col-md-4"></div></div>');
 
 	        },
 	       success: function(){

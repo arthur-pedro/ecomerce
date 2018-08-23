@@ -2,7 +2,9 @@
 
 function calcula_preco(){
         
-    require("conexao_mysql.php");
+    require_once("php/lib/conexao/conexao_mysql.php");
+    $conexao = new MyDatabase();
+    $conn = $conexao->connect();
 	    
     $total_preco = 0;
 

@@ -141,7 +141,7 @@ input[type=text]:hover, textarea:hover{
 	/*padding-bottom: 600px;*/
 	border-radius: 5px;
 	padding: 10px;
-	margin-top: 300px;
+	margin-top: 40%;
 	/*background-color: #f65c5c;;*/
 }
 .box-login-1{
@@ -150,7 +150,7 @@ input[type=text]:hover, textarea:hover{
 	/*padding-bottom: 600px;*/
 	border-radius: 5px;
 	padding: 10px;
-	margin-top: 150px;
+	margin-top: 30%;
 	/*background-color: #f65c5c;;*/
 }
 

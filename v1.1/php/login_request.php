@@ -1,7 +1,9 @@
 <?php
 	
 	session_start();
-	require("conexao_mysql.php");
+	require("lib/conexao/conexao_mysql.php");
+    $conexao = new MyDatabase();
+    $conn = $conexao->connect();
 
 
 

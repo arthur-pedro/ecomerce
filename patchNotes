@@ -1,8 +1,11 @@
 ---------------> BEM-VINDO <---------------
 
-1 - V1.0 ---> front finalzado e estável;
+1 - V1.0 ---> front finalzado e estável (versão antiga);
+2 - V1.1 ---> back em andamento	2 - V1.1 ---> back em andamento
+3 - Executar o arquivo index..php no browser (não funciona pelo git, pois o git nao roda PHP)	3 - Executar o arquivo index.php no browser (Caso tenha o ambiente configurado -> PHP7+ + MYSQL5.4+ + APACHE2+) (não funciona pelo git, pois o git nao roda PHP)
+3.1 - Configurar MYSQL para acesso remoto na host.
+3.2	-> Modificar arquivo 'conexao_mysql' no seuginte diretório: v1.1/php/lib/conexao/conexao_mysql.php
 
-2 - V1.1 ---> back em andamento
-
-3 - Executar o arquivo index..php no browser (não funciona pelo git, pois o git nao roda PHP)
-
+- Testar as seguintes conexões:
+- sql154.main-hosting.eu (desenvolvimento)
+- mysql.hostinger.com.br (produção)
