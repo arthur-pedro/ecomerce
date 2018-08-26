@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700');
+
+a {
+    text-decoration: none;
+    outline: none;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    color: #333333;
+}
+
+input:focus,
+button:focus,
+a:focus,
+a:hover {
+    text-decoration: none;
+    outline: none;
+    color: #000000;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0 0 10px;
+    font-weight: 600;
+}
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.8;
+    color: #515656;
+}
+
+
+/* Remove Chrome Input Field's Unwanted Yellow Background Color */
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+}
+
+
+body, html{
+	width: 100%;
+	height: 100%;
+}
+
+.centralizar{
+	text-align: center;
+	align-items: center;
+}
+
+/*<-----------------------------button------------------------------>*/
+.button {
+    display: inline-block;
+    padding: 8px 30px;
+    /*border-radius: 50px;*/
+    color: #ffffff;
+    background-color: #5ddf97;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    border: none;
+    -webkit-box-shadow: 2px 5px 20px -5px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 5px 20px -5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.button.white,
+.button:hover {
+    background-color: #a630ba;
+    color: #ffffff;
+}
+
+.button.white:hover {
+    background-color: #a630ba;
+    color: #ffffff;
+}
+
+.button {
+    margin-top: 10px;
+}
+/*<-----------------------------button------------------------------>*/
+
+input[type=text]{ 	
+	padding: 20px;
+	border-radius: 0px;
+	/*outline: none;
+	border: none;*/
+}
+input[type=password]{ 
+	border-radius: 0px;	
+	padding: 20px;
+}
+
+/*textarea{
+	
+}*/
+
+input[type=text]:hover, textarea:hover{ 
+    
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.8;
+    color: #515656;
+
+}
+
+
+
+/*input[type=submit]{
+        
+}
+*/
+
+
+.myInput{
+	
+	font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1.8;
+    color: #515656;
+}
+
+
+.box-login{
+
+	/*padding-right: 500px;*/
+	/*padding-bottom: 600px;*/
+	border-radius: 5px;
+	padding: 10px;
+	margin-top: 40%;
+	/*background-color: #f65c5c;;*/
+}
+.box-login-1{
+
+	/*padding-right: 500px;*/
+	/*padding-bottom: 600px;*/
+	border-radius: 5px;
+	padding: 10px;
+	margin-top: 30%;
+	/*background-color: #f65c5c;;*/
+}
+
+.fix-position{
+	margin-top: 10px;
+}
+
+/*<-----------------------------ajustes de tela------------------------------>*/
+
+@media only screen and (max-width: 760px) {
+    .box-login-1{
+    	margin-top: 0px;
+    }
+
+    .box-login{
+
+	margin-top: 0px;
+	/*background-color: #f65c5c;;*/
+	}
+}
+
+
+/*<-----------------------------ajustes de tela------------------------------>
