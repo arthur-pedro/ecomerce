@@ -1,3 +1,3 @@
 <?php 
-	header("Location: app/main/");
+	header("Location: app/login/");
 ?>

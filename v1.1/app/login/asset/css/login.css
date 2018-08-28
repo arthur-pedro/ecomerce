@@ -47,14 +47,26 @@ body {
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus {
-    -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+-webkit-box-shadow: 0 0 0px 1000px white inset !important;
 }
 
 
-body, html{
+body{
 	width: 100%;
-	height: 100%;
+    height: 100%;
+    background-color: #52aada6b;
+    overflow-y:hidden;
+    background-image: url('../../../../lib/asset/images/angle-bg.png');
+    
+
 }
+
+.img-header{
+    margin-top: 200px;
+    /*background-image: url('../images/angle-bg.png');*/
+}
+
+
 
 .centralizar{
 	text-align: center;
@@ -137,20 +149,21 @@ input[type=text]:hover, textarea:hover{
 
 .box-login{
 
-	/*padding-right: 500px;*/
-	/*padding-bottom: 600px;*/
-	border-radius: 5px;
-	padding: 10px;
-	margin-top: 40%;
-	/*background-color: #f65c5c;;*/
+	/*padding-right: 300px;
+	padding-bottom: 600px;
+	*/
+    border-radius: 3px;
+	padding: 30px;
+	/*padding:200px;*/
+	background-color: #fff;
 }
 .box-login-1{
 
 	/*padding-right: 500px;*/
 	/*padding-bottom: 600px;*/
-	border-radius: 5px;
+	/* border-radius: 5px;
 	padding: 10px;
-	margin-top: 30%;
+	margin-top: 30%; */
 	/*background-color: #f65c5c;;*/
 }
 
@@ -160,7 +173,7 @@ input[type=text]:hover, textarea:hover{
 
 /*<-----------------------------ajustes de tela------------------------------>*/
 
-@media only screen and (max-width: 760px) {
+/* @media only screen and (max-width: 760px) {
     .box-login-1{
     	margin-top: 0px;
     }
@@ -168,9 +181,7 @@ input[type=text]:hover, textarea:hover{
     .box-login{
 
 	margin-top: 0px;
-	/*background-color: #f65c5c;;*/
+	
 	}
-}
+} */
 
-
-/*<-----------------------------ajustes de tela------------------------------>

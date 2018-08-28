@@ -1,3 +1,4 @@
+
 function login(){
 	/*alert("w");*/ 
 	//jQuery("#form-login").submit(function(){
@@ -9,7 +10,7 @@ function login(){
 		//var dados = 'ok';
 
 		$.ajax({
-			url: "../../lib/asset/php/login_request.php",
+			url: "asset/php/login_request.php",
 			type: "POST",
 			data: "nome=" + nome + "&senha=" + senha + "&btn_login=" + btn_type,
 			beforeSend: function(){
@@ -19,15 +20,15 @@ function login(){
 	        },
 	       success: function(cb){
 	           
-	           /*alert(cb);*/
+	         /*  alert(cb);*/
 
-	           if (cb == "logado") {
+	           if (cb == "logged") {
 
 	         
 	           		$("#fade").html('<div class="row"><div class="col-md-4"></div><div class="col-md-4"><img src="../../lib/asset/images/check.gif"></div><div class="col-md-4"></div></div>');
 	           			
 	           		setTimeout(function(){
-	          			window.location.replace("../adm_area");
+	          			window.location.replace("../main");
 					}, 1300);
 	           		
 
@@ -82,7 +83,7 @@ function cadastrar(){
 		//var dados = 'ok';
 
 		$.ajax({
-			url: "../../lib/asset/php/login_request.php",
+			url: "asset/php/login_request.php",
 			type: "POST",
 			data: "nome=" + nome + "&email=" + email + "&senha=" + senha + "&confirma_senha=" + confirma_senha +"&btn_login=" + btn_type,
 			beforeSend: function(){

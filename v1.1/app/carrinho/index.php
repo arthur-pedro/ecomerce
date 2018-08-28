@@ -3,8 +3,11 @@
     
     session_start();
 
-    /*require_once("../../lib/asset/php/myFunctions.php");*/
-    require("../../lib/class/conexao/conexao_mysql.php");
+    // /*require_once("../../lib/asset/php/myFunctions.php");*/
+    require_once("../../lib/class/conexao/conexao_mysql.php");
+    // require_once("../../lib/class/util/util_class.php");
+
+    
     
 
     $conexao = new MyDatabase();
@@ -43,14 +46,7 @@
     <!-- <link rel="stylesheet" href="css/normalize.css"> -->
     <link rel="stylesheet" href="../../lib/asset/css/style.css">
     <link rel="stylesheet" href="../../lib/asset/css/responsive.css">
-    <!-- <script src="js/vendor/modernizr-2.8.3.min.js"></script>
- -->
-    <!-- <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet"> -->
 
-    <!--[if lt IE 9]>
-        <script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-        <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
 </head>
 
 <body data-spy="scroll" data-target="#primary-menu">
@@ -124,7 +120,7 @@
 
                     
                     
-                    // CHECK
+                    // CHECK 
                     if(isset($_SESSION['carrinho'])){
 
                         foreach ($_SESSION['query_carrinho'] as $key) {

@@ -7,11 +7,11 @@
 		private $senha;
 
 		/*construtor*/
-		public function Usuario($name, $email, $senha) {
-		    $this->setNome($nome);
-		    $this->setEmail($email);
-		    $this->setSenha($senha);
-		 }
+		// public function usuario($name, $email, $senha) {
+		//     $this->setNome($nome);
+		//     $this->setEmail($email);
+		//     $this->setSenha($senha);
+		//  }
 
 		public function getNome(){
 			return $this->nome;
@@ -37,4 +37,5 @@
 			return $this->senha = $senha;
 		}	
 	}
+
 ?>

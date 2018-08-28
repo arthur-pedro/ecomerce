@@ -44,6 +44,17 @@
 			}
 		}
 
+		public function connectPDO(){
+			try {
+				$conn = new PDO('mysql:host=localhost;dbname=ecomerce','root', 'root');
+				$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+				return $conn;
+				
+			  } catch(PDOException $e) {
+				  echo 'ERROR: ' . $e->getMessage();
+			  }
+		}
+
 		public function disconnect($conn){
 			$this->conn = $conn;
 			return mysqli_close($this->conn);
