@@ -1,10 +1,10 @@
 <?php
 
-	class Usuario {
+	class Client {
 
-		private $nome;
+		private $name;
 		private $email;
-		private $senha;
+		private $password;
 
 		/*construtor*/
 		// public function usuario($name, $email, $senha) {
@@ -13,12 +13,12 @@
 		//     $this->setSenha($senha);
 		//  }
 
-		public function getNome(){
-			return $this->nome;
+		public function getName(){
+			return $this->name;
 		}
 
-		public function setNome($nome){
-			return $this->nome = $nome;
+		public function setName($name){
+			$this->name = $name;
 		}	
 
 		public function getEmail(){
@@ -26,15 +26,15 @@
 		}
 
 		public function setEmail($email){
-			return $this->email = $email;
+			$this->email = $email;
 		}	
 
-		public function getSenha(){
-			return $this->senha;
+		public function getPassword(){
+			return $this->password;
 		}
 
-		public function setSenha($senha){
-			return $this->senha = $senha;
+		public function setPassword($password){
+			$this->password = $password;
 		}	
 	}
 

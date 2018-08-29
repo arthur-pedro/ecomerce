@@ -1,94 +1,30 @@
 <?php
 
-	/*require("../conexao/conexao_mysql.php");*/
-
-	class MyDatabase{
-
-		/*public $server = "sql154.main-hosting.eu";
-		public $usuario = "u816138972_pedro";
-		public $senha = "1772004516Ap.";
-		public $database = "u816138972_ecom";
-		public $link = "";*/
-
-		public $server = "127.0.0.1";
-		public $usuario = "root";
-		public $senha = "root";
-		public $database = "ecomerce";
-		public $link = "";
-		
-		public $query = "SELECT * FROM servicos";
-
-		public function myConnection(){
-			
-			$this->connect();
-		}
- 
-		public function connect(){
-
-			if(isset($this->server)){
-				$conn = mysqli_connect($this->server, $this->usuario, $this->senha);
-				$conn->set_charset("utf8");
-			}else{
-
-				echo "Erro";
-			}
-			
-			if (!$conn){
-
-	  			die("Problema na Conexão com o Banco de Dados");
-
-	  		}elseif (!mysqli_select_db($conn,$this->database)){
-
-	  			die("Problema na Conexão com o Banco de Dados");
-			}else{
-				return $conn;
-			}
-		}
-
-		public function connectPDO(){
-			try {
-				$conn = new PDO('mysql:host=localhost;dbname=ecomerce','root', 'root');
-				$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-				return $conn;
-				
-			  } catch(PDOException $e) {
-				  echo 'ERROR: ' . $e->getMessage();
-			  }
-		}
-
-		public function disconnect($conn){
-			$this->conn = $conn;
-			return mysqli_close($this->conn);
-		}
-
-		public function exec_sql($query,$conn){
-			
-
-			$this->query = $query;
-			$this->conn = $conn;
-
-			if($result = mysqli_query($this->conn,$this->query)){
-				return $result;
-			}else{
-				return 0;
-			}
-			
-		}
-	}
-
 	class Util{
 
+		private $conexao;
+		private $user;
+		private $product;
+		private $shoppingCart;
+
+
+		/*chama uma classe de outro arquivo php*/
+		public function callClassByFolderName($className){
+			$path = '../';
+			require_once($path . $className . '/' . $className . '_class.php');
+		}
+
 		/*retorna true se o usuario esta logadoUsiario*/
-		public function isLogged($usuario){
+		public function isLogged(Client $client){
 			return true;
 		}
 
-		public function authenticationUser($email, $senha){
+		public function authenticationUser($email, $password){
 
 			$this->email = $email;
-			$this->senha = $senha;
+			$this->password = $password;
 
-			if(!isset($email) || !isset($senha) || $this->email == '' || $this->senha == ''){
+			if(!isset($email) || !isset($password) || $this->email == '' || $this->password == ''){
 				echo "nullField";
 			}
 			else if($this->emailExist($email)){
@@ -102,9 +38,14 @@
 		/*retorna true se o email é válido*/
 		public function emailExist($email){
 			
+			$this->callClassByFolderName('connectionMYSQL');
+
 			if(isset($email))
 				
 				$query_emailExist = "SELECT email_usuario FROM usuarios WHERE email_usuario = '$email'";
+				$conexao = new MyDatabase();
+				$conn = $conexao->connectPDO();
+				$result = $conn->query($query_insertUser);
 
 				$conexao = new MyDatabase();
 				$conn = $conexao->connectPDO();
@@ -121,29 +62,59 @@
 
 		/*retorna true se o usuario for admin*/
 		public function isAdm($email){
-			return true;
+			
+			$this->callClassByFolderName('connectionMYSQL');
+
+			$query_isAdm = "SELECT  `email_usuario`, `adm` FROM `usuarios` WHERE `email_usuario` = '$email'";
+			$conexao = new MyDatabase();
+			$conn = $conexao->connectPDO();
+			$stmt = $conn->prepare($query_isAdm);
+
+			if(!$stmt->execute()){
+			    echo '<pre>';
+			    print_r($stmt->errorInfo());
+			}else{
+				$resultado = $stmt->fetch(PDO::FETCH_ASSOC);
+				if($resultado['adm'] == true){
+					return true;
+				}
+				return false;
+			}
 		}
 		/*cria usuario na base*/
 		public function createUser($nome_usuario, $email_usuario, $senha_usuario){
 			
+			$this->callClassByFolderName('connectionMYSQL');
+
 			if(isset($email_usuario) && isset($email_usuario) && isset($senha_usuario))
 				if($this->emailExist($email_usuario) == false){
 
 					$query_insertUser = "INSERT INTO usuarios (`nome_usuario`, `email_usuario`, `senha_usuario`) VALUES ('$nome_usuario','$email_usuario', '$senha_usuario')";
-
-
 					$conexao = new MyDatabase();
 					$conn = $conexao->connectPDO();
-
-					
 					$result = $conn->query($query_insertUser);
-					echo "userCreated";
-					
+					echo "userCreated";	
 				}
 		}
 
-		// deleta usuariod a base
-		public function deleteUser($usurio){
+		// deleta usuario a base
+		public function deleteUser($email){
+
+			if($this->emailExist($email)){
+
+				$this->callClassByFolderName('connectionMYSQL');
+				
+				$queryDeletUser = "DELETE FROM `usuarios` WHERE email_usuario = '$email'";
+				$conexao = new MyDatabase();
+				$conn = $conexao->connectPDO();
+				$result = $conn->query($queryDeletUser);
+				echo "userDeleted";	
+
+			}else{
+				echo 'impossibleRemove';
+			}
+			
+			
 
 		}
 		/*adiciona item no carrinho*/
@@ -159,10 +130,8 @@
 
 	}
 
-	/*$utilClass = new Util();
-	$utilClass->authenticationUser('teste@gmail.com', '123');*/
-	/*$usuario = new Usuario();
-	$usuario->setNome("Arthur");
+	$utilClass = new Util();
 
-	echo $usuario->getNome();*/
+	$utilClass->isAdm('arthurpedroweb@gmail.com');
+
 ?>
