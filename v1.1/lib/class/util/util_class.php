@@ -10,14 +10,21 @@
 
 		/*chama uma classe de outro arquivo php*/
 		public function callClassByFolderName($className){
-			$path = '../';
+			$path = 'C:/Program Files/NetMake/v9/wwwroot/ecomerce/v1.1/lib/class/';
 			require_once($path . $className . '/' . $className . '_class.php');
 		}
 
+		public function autoLoadClass(){
+			spl_autoload_register(function ($class_name) {
+ 			$path = 'C:/Program Files/NetMake/v9/wwwroot/ecomerce/v1.1/lib/class/';
+		    	include $path . strtolower($class_name) . '/' . strtolower($class_name) . '_class.php';
+			});
+		}
 		/*retorna true se o usuario esta logadoUsiario*/
 		public function isLogged(Client $client){
 			return true;
 		}
+
 
 		public function authenticationUser($email, $password){
 
@@ -43,9 +50,6 @@
 			if(isset($email))
 				
 				$query_emailExist = "SELECT email_usuario FROM usuarios WHERE email_usuario = '$email'";
-				$conexao = new MyDatabase();
-				$conn = $conexao->connectPDO();
-				$result = $conn->query($query_insertUser);
 
 				$conexao = new MyDatabase();
 				$conn = $conexao->connectPDO();
@@ -97,7 +101,7 @@
 				}
 		}
 
-		// deleta usuario a base
+		// deleta usuario na base
 		public function deleteUser($email){
 
 			if($this->emailExist($email)){
@@ -113,25 +117,18 @@
 			}else{
 				echo 'impossibleRemove';
 			}
-			
-			
-
 		}
 		/*adiciona item no carrinho*/
-		public function addItem(){
+		public function addItem(Object $ShoppingCart, Object $Product){
 
 		}
 		/*remove item do carrinho*/
 		public function removeItem(){
 			
 		}
-
-
-
 	}
 
-	$utilClass = new Util();
-
-	$utilClass->isAdm('arthurpedroweb@gmail.com');
-
+	/*$utilClass = new Util();
+	$utilClass->isAdm('arthurpedroweb@gmail.com');*/
+	
 ?>

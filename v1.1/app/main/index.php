@@ -3,8 +3,6 @@
     
     session_start();
 
-   /* require_once("../../lib/asset/php/myFunctions.php");
-*/
     if(!isset($_SESSION['qtd_produtos'])){
         $_SESSION['qtd_produtos'] = 0;
     }
@@ -66,7 +64,13 @@
                     <li><a href="#service-page">Serviços</a></li>
                     <li><a href="#faq-page">Dúvidas</a></li>
                     <li><a href="#contact-page">Contato</a></li>
-                    <li><a href="../carrinho/index.php"><span class="glyphicon glyphicon-shopping-cart"> R$ 0.00 (<span><?php echo $_SESSION['qtd_produtos']; ?></span> itens)</span></a></li>
+                    <li><a href="../carrinho/index.php">
+                    <span class="glyphicon glyphicon-shopping-cart"><span class="badge badge-warning"><?php echo $_SESSION['qtd_produtos'];?>
+                    </span>
+                    R$ 0.00
+                    </a>
+                
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -112,7 +116,6 @@
                                     <div class="box-icon">
                                         <img src="../../lib/asset/images/service-icon-1.png" alt="">
                                     </div>
-                                    
                                     <div id="item_1">
                                         <h3>Cartão Visita</h3>
                                         <hr>
@@ -187,7 +190,7 @@
                     <div class="modal-dialog modal-sm">
                         <div class="modal-content">
                             <div class="modal-header">
-                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                              <button onclick="att_pagina();" type="button" class="close" data-dismiss="modal">&times;</button>
                               <h4 class="modal-title">Item adicionado no carrinho!</h4>
                             </div>
                             <div class="modal-body">
@@ -355,7 +358,6 @@
     <!--Vendor-JS-->
     <script src="../../lib/asset/js/vendor/jquery-1.12.4.min.js"></script>
     <script src="../../lib/asset/js/vendor/bootstrap.min.js"></script>
-    <script src="../../lib/asset/js/ajax_request_carrinho.js"></script>
     <!--Plugin-JS-->
     <script src="../../lib/asset/js/owl.carousel.min.js"></script>
     <script src="../../lib/asset/js/contact-form.js"></script>
@@ -365,6 +367,7 @@
     <script src="../../lib/asset/js/wow.min.js"></script>
     <!--Main-active-JS-->
     <script src="../../lib/asset/js/main.js"></script>
+    <script src="asset/js/ajax_request_addItem.js"></script>
 </body>
 
 </html>

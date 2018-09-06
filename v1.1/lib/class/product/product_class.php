@@ -5,12 +5,18 @@
 		private $price;
 		private $description;
 
+		public function __construct($name, $price, $description){
+			$this->name = $name;
+			$this->price = $price;
+			$this->description = $description;
+		}
+
 		public function getName(){
-			return $this->nome;
+			return $this->name;
 		}
 
 		public function setName($name){
-			$this->nome = $nome;
+			$this->name = $name;
 		}
 
 		public function getPrice(){
